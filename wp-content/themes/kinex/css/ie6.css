@@ -1,0 +1,15 @@
+/* ie6 hack */
+#ie6 .one_half, #ie6 .one_third, #ie6 .one_fourth,
+#ie6 .one_fifth, #ie6 .one_sixth, #ie6 .two_third,
+#ie6 .three_fourth, #ie6 .four_fifth, #ie6.five_sixth,
+#ie6.two_fifth, #ie6.three_fifth{margin-right:2%; }
+
+#ie6 .style_box{
+   background-image     :url(../images/shortcodes/overlay_box.png);
+   background-repeat    :repeat-x;
+}
+
+#ie6 ul.ul_list ul,
+#ie6 ul.ul_list{		margin-left:0 !important; display:inline-block;	}
+
+#ie6 .codeCover{ display:none; }

@@ -1,0 +1,4 @@
+[27-Apr-2015 06:37:29 America/Denver] PHP Fatal error:  Call to undefined function add_action() in /home2/tebmartc/public_html/wp-content/plugins/visual-form-builder/includes/class-widget.php on line 3
+[03-May-2015 23:02:29] PHP Fatal error:  Call to undefined function  add_action() in /home2/tebmartc/public_html/wp-content/plugins/visual-form-builder/includes/class-widget.php on line 3
+[11-May-2015 04:18:07] PHP Fatal error:  Call to undefined function  add_action() in /home2/tebmartc/public_html/wp-content/plugins/visual-form-builder/includes/class-widget.php on line 3
+[12-May-2015 19:08:00] PHP Fatal error:  Call to undefined function  add_action() in /home2/tebmartc/public_html/wp-content/plugins/visual-form-builder/includes/class-widget.php on line 3

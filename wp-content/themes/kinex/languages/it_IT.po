@@ -1,0 +1,283 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CStar Design\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-24 01:38+0200\n"
+"PO-Revision-Date: 2012-10-08 17:56+0200\n"
+"Last-Translator: Tester <tester@test.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;__;_e;_e(;__(;gettext_noop;gettext\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../404.php:11
+#: ../loop.php:5
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "Ooops, non è stato possibile trovare la pagina richesta. Con la funzione di ricerca potete trovare qualcosa di affine."
+
+#: ../404.php:18
+msgid "Categories"
+msgstr "Categorie"
+
+#: ../404.php:25
+msgid "Posts"
+msgstr "Articoli"
+
+#: ../404.php:31
+#: ../loop.php:13
+#: ../loop.php:25
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Link permanente a %s"
+
+#: ../404.php:37
+msgid "Pages"
+msgstr "Pagine"
+
+#: ../comments.php:15
+msgid "Your comment is awaiting moderation."
+msgstr "Il tuo commento deve essere approvato."
+
+#: ../comments.php:17
+msgid "(reply)"
+msgstr "(rispondi)"
+
+#: ../comments.php:18
+msgid "(edit)"
+msgstr "(modifica)"
+
+#: ../comments.php:26
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Questo articolo è protetto. Inserisci la password per visualizzarne il contenuto."
+
+#: ../comments.php:35
+#: ../comments.php:44
+msgid "<span class=\"meta-nav\">&larr;</span> Older Comments"
+msgstr "<span class=\"meta-nav\">&larr;</span> Commenti meno recenti"
+
+#: ../comments.php:36
+#: ../comments.php:45
+msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Commenti più recenti <span class=\"meta-nav\">&rarr;</span>"
+
+#: ../comments.php:59
+msgid "Leave a Reply"
+msgstr "Rispondi"
+
+#: ../comments.php:59
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Rispondi a %s"
+
+#: ../comments.php:62
+#, php-format
+msgid "<p>You must be <a href=\"%s\">logged in</a> to post a comment.</p></div>"
+msgstr "<p>Devi effettuare il <a href=\"%s\">log in</a> per poter commentare.</p></div>"
+
+#: ../comments.php:68
+#, php-format
+msgid "Logged in as <a href=\"%1$s/wp-admin/profile.php\">%2$s</a>."
+msgstr "Connesso come <a href=\"%1$s/wp-admin/profile.php\">%2$s</a>."
+
+#: ../comments.php:73
+msgid "Name"
+msgstr "Nome"
+
+#: ../comments.php:73
+msgid " (*)"
+msgstr " (*)"
+
+#: ../comments.php:77
+msgid "Email"
+msgstr "Email"
+
+#: ../comments.php:77
+msgid " ( * will not be published )"
+msgstr "  ( * non verrà pubblicata )"
+
+#: ../comments.php:81
+msgid "Website"
+msgstr "Sito web"
+
+#: ../comments.php:85
+msgid "Post Comment"
+msgstr "Commenta"
+
+#: ../searchform.php:2
+msgid "Search..."
+msgstr "Cerca..."
+
+#: ../single.php:36
+msgid "&larr;"
+msgstr "&larr;"
+
+#: ../single.php:37
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: ../template-portfolio.php:101
+msgid "Read More ..."
+msgstr "Continua a leggere ..."
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:15
+#, php-format
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:657
+msgid "on "
+msgstr "il "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:658
+#, php-format
+msgid "in %s"
+msgstr "in %s"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:661
+msgid "Tags: "
+msgstr "Tags: "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:666
+msgid "No Comments"
+msgstr "Nessun Commento"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:666
+msgid "1 Comment"
+msgstr "1 Commento"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:666
+msgid "% Comments"
+msgstr "% Commenti"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:667
+msgid "with "
+msgstr "con "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:1026
+msgid "Archives"
+msgstr "Archivio"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:1028
+msgid "Category Archives for "
+msgstr "Contenuti di "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:1030
+msgid "Tag Archives for "
+msgstr "Contenuti per Tag "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:1032
+msgid "Daily Archives for "
+msgstr "contenuti del giorno "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:1034
+msgid "Monthly Archives for "
+msgstr "Contenuti del mese "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:1036
+msgid "Yearly Archives for "
+msgstr "Archivio dell'anno "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:1039
+msgid "Archives by "
+msgstr "Contenuti di "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:1044
+msgid "Page Not Found"
+msgstr "Pagina Non Frovata"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/functions.php:1051
+msgid "Search results for \""
+msgstr "Risultati di ricerca per \""
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/shortcodes.php:592
+msgid "[top]"
+msgstr "[su]"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/shortcodes.php:1072
+msgid "Your message was successfully sent. <strong>Thank You!</strong>"
+msgstr "Il tuo messaggio è stato inviato correttamente. <strong>Grazie !</strong>"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/shortcodes.php:1075
+msgid "Name *"
+msgstr "Nome *"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/shortcodes.php:1076
+msgid "Email *"
+msgstr "Email *"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/shortcodes.php:1077
+msgid "Message *"
+msgstr "Messaggio *"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/shortcodes.php:1078
+msgid "Submit"
+msgstr "Invia"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/shortcodes.php:1172
+msgid "View all posts"
+msgstr "Guarda tutti gli articoli"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/shortcodes.php:1182
+#, php-format
+msgid "View all posts in %s"
+msgstr "Guarda tutti gli articoli in %s"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/sendmail.php:57
+#, php-format
+msgid "%1$s's message from %2$s"
+msgstr "%1$s, messaggio da %2$s"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/sendmail.php:58
+msgid "Site: "
+msgstr "Sito: "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/sendmail.php:59
+msgid "Name: "
+msgstr "Nome: "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/sendmail.php:60
+msgid "Email: "
+msgstr "Email: "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/sendmail.php:61
+msgid "Messages: "
+msgstr "Messaggi: "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/plugins/breadcrumbs-plus/breadcrumbs-plus.php:54
+msgid "You are here: "
+msgstr "Sei qui: "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/plugins/breadcrumbs-plus/breadcrumbs-plus.php:55
+msgid "Home"
+msgstr "Home"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/plugins/breadcrumbs-plus/breadcrumbs-plus.php:196
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/plugins/breadcrumbs-plus/breadcrumbs-plus.php:199
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/plugins/breadcrumbs-plus/breadcrumbs-plus.php:202
+msgid "Archives for "
+msgstr "Contenuti per "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/plugins/breadcrumbs-plus/breadcrumbs-plus.php:206
+msgid "Archives by: "
+msgstr "Contenuti di: "
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/plugins/wp-pagenavi/wp-pagenavi.php:119
+msgid "Page %CURRENT_PAGE% of %TOTAL_PAGES%"
+msgstr "Pagina %CURRENT_PAGE% di %TOTAL_PAGES%"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/plugins/wp-pagenavi/wp-pagenavi.php:122
+msgid "&laquo; First"
+msgstr "&laquo; Primo"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/requireds/plugins/wp-pagenavi/wp-pagenavi.php:123
+msgid "Last &raquo;"
+msgstr "Ultimo &raquo;"
+
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/function.php:69
+#: ../cstar_design_framework/libs/themelibs/cstar_design/includes/function.php:99
+msgid "Go to..."
+msgstr ""
+

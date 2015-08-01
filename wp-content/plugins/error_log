@@ -1,0 +1,5 @@
+[29-Apr-2015 03:22:55 America/Denver] PHP Fatal error:  Call to undefined function add_action() in /home2/tebmartc/public_html/wp-content/plugins/hello.php on line 60
+[02-May-2015 12:44:04 America/Denver] PHP Notice:  Use of undefined constant wphp4 - assumed 'wphp4' in /home2/tebmartc/public_html/wp-content/plugins/index.php on line 3
+[02-May-2015 12:44:04 America/Denver] PHP Notice:  Use of undefined constant wphp5 - assumed 'wphp5' in /home2/tebmartc/public_html/wp-content/plugins/index.php on line 4
+[13-May-2015 08:59:05] PHP Fatal error:  Call to undefined function  add_action() in /home2/tebmartc/public_html/wp-content/plugins/hello.php on line 60
+[31-May-2015 00:48:54] PHP Fatal error:  Call to undefined function  add_action() in /home2/tebmartc/public_html/wp-content/plugins/hello.php on line 60

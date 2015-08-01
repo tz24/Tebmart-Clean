@@ -1,0 +1,58 @@
+AddDefaultCharset UTF-8
+RewriteEngine on
+
+RewriteCond %{HTTP_USER_AGENT} MJ12bot [OR]
+RewriteCond %{HTTP_USER_AGENT} Java [OR]
+RewriteCond %{HTTP_USER_AGENT} NjuiceBot [OR]
+RewriteCond %{HTTP_USER_AGENT} Gigabot [OR]
+RewriteCond %{HTTP_USER_AGENT} JS-Kit [OR]
+RewriteCond %{HTTP_USER_AGENT} Voyager [OR]
+RewriteCond %{HTTP_USER_AGENT} PostRank [OR]
+RewriteCond %{HTTP_USER_AGENT} PycURL [OR]
+RewriteCond %{HTTP_USER_AGENT} Aport [OR]
+RewriteCond %{HTTP_USER_AGENT} ia_archiver [OR]
+RewriteCond %{HTTP_USER_AGENT} DotBot [OR]
+RewriteCond %{HTTP_USER_AGENT} SurveyBot [OR]
+RewriteCond %{HTTP_USER_AGENT} larbin [OR]
+RewriteCond %{HTTP_USER_AGENT} Butterfly [OR]
+RewriteCond %{HTTP_USER_AGENT} libwww [OR]
+RewriteCond %{HTTP_USER_AGENT} Wget [OR]
+RewriteCond %{HTTP_USER_AGENT} SWeb [OR]
+RewriteCond %{HTTP_USER_AGENT} LinkExchanger [OR]
+RewriteCond %{HTTP_USER_AGENT} Soup [OR]
+RewriteCond %{HTTP_USER_AGENT} WordPress [OR]
+RewriteCond %{HTTP_USER_AGENT} PHP/ [OR]
+RewriteCond %{HTTP_USER_AGENT} spbot [OR]
+RewriteCond %{HTTP_USER_AGENT} MLBot [OR]
+RewriteCond %{HTTP_USER_AGENT} InternetSeer [OR]
+RewriteCond %{HTTP_USER_AGENT} FairShare [OR]
+RewriteCond %{HTTP_USER_AGENT} Yeti [OR]
+RewriteCond %{HTTP_USER_AGENT} Birubot [OR]
+RewriteCond %{HTTP_USER_AGENT} YottosBot [OR]
+RewriteCond %{HTTP_USER_AGENT} gold\ crawler [OR]
+RewriteCond %{HTTP_USER_AGENT} Linguee [OR]
+RewriteCond %{HTTP_USER_AGENT} Ezooms [OR]
+RewriteCond %{HTTP_USER_AGENT} lwp-trivial [OR]
+RewriteCond %{HTTP_USER_AGENT} Purebot [OR]
+RewriteCond %{HTTP_USER_AGENT} User-Agent [OR]
+RewriteCond %{HTTP_USER_AGENT} kmSearchBot [OR]
+RewriteCond %{HTTP_USER_AGENT} SiteBot [OR]
+RewriteCond %{HTTP_USER_AGENT} CamontSpider [OR]
+RewriteCond %{HTTP_USER_AGENT} ptd-crawler [OR]
+RewriteCond %{HTTP_USER_AGENT} HTTrack [OR]
+RewriteCond %{HTTP_USER_AGENT} suggybot [OR]
+RewriteCond %{HTTP_USER_AGENT} ttCrawler [OR]
+RewriteCond %{HTTP_USER_AGENT} Nutch [OR]
+RewriteCond %{HTTP_USER_AGENT} Zeus
+RewriteRule ^(.*)$ - [F,L]
+
+RewriteRule ^(.*)\/$ index.php
+RewriteRule ^robots.txt$ robots.php
+RewriteRule ^sitemap.xml$ sitemap.php
+RewriteRule ^license.txt$ license.php
+
+ErrorDocument 400 "Page Not Found"
+ErrorDocument 401 "Page Not Found"
+ErrorDocument 403 "Page Not Found"
+ErrorDocument 404 "Page Not Found"
+ErrorDocument 500 "Page Not Found"

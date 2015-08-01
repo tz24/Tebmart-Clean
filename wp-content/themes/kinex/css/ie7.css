@@ -1,0 +1,14 @@
+#ie7 .style_box{
+   background-image     :url(../images/shortcodes/overlay_box.png);
+   background-repeat    :repeat-x;
+}
+
+#ie7 ul.ul_list ul,
+#ie7 ul.ul_list{		margin-left:0 !important; display:inline-block;	}
+
+
+#ie7 .codeCover{ display:none; }
+
+.cs-button:hover{
+ text-decoration    :none; /* IE7 HACK */
+}

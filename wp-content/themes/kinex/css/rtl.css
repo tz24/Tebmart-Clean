@@ -1,0 +1,47 @@
+body { direction:rtl; unicode-bidi: embed; text-align:right; }
+a.nt-icon-color,a.nt-icon{text-align:right; }
+ul.ul_list ul,ul.ul_list{padding-right:20px;}
+ul.ul_list li{padding-right:20px;background-position:100% 2px;}
+
+/* ---------- @boxes ---------- */
+.box-icon16{padding:20px 50px 20px 20px;background-position:98% 50%;}
+.box-icon32{padding:20px 70px 20px 20px;background-position:98% 50%;}
+.box-icon48{padding:20px 80px 20px 20px;background-position:98% 50%;}
+.box-icon64{padding:20px 100px 20px 20px;background-position:98% 50%;}
+a.box-hide{top:5px;right:auto;left:5px;}
+.style_box span.icon{background-position:98% 50%;padding:0 70px 0 0;margin-left:0;margin-right:-20px;}
+
+/* ---------- @dropcaps ---------- */
+.dropcap{float:right;margin:5px 0 0 10px;}
+.dropcircle{float:right;margin-left:10px;}
+
+/* ---------- @blockquotes ---------- */
+blockquote{background-position:right 10px;padding:15px 40px 0 0;}
+blockquote.pquote{border-left:0;border-right:5px solid #CCCCCC;}
+
+/* ---------- @accordion ---------- */
+.accordion > h5 > span{padding-right:25px;}
+h5.toggle {float:right;}
+
+/* ---------- @tabs ---------- */
+.tab_model_1,.tab_model_1 ul.tab_button,.tab_model_1 ul.tab_button li{float:right;}
+
+/* ---------- @others ---------- */
+.alignleft{float:right;margin-left:1.625em;margin-right:0;}
+.alignright{float:left;margin-right:1.625em;margin-left:0;}
+.wp-pagenavi{margin-bottom:20px; float:right;}
+.gravatar {float:right;}
+.comment-text {margin-left:0;margin-right:90px;}
+.commentlist li.depth-2,.commentlist li.depth-3,
+.commentlist li.depth-4,.commentlist li.depth-5 {    border-right:1px solid #e1e1e1;border-left:0;padding: 0 20px 20px 0;}
+ul#recentcomments li{background-position:100% 3px; padding-right:25px; padding-left:0;}
+.recent_list li{background:url(../images/icons/link_arrow_rtl.png) no-repeat 100% 6px transparent;}
+.recent_list li a{padding-top:3px;padding-left:0;padding-right:20px;}
+.widget_nav_menu ul li a,.widget_pages ul li a,.widget_rss ul li a,.widget_recent_entries ul li a,.widget_meta ul li a,
+.widget_links ul li a,.widget_archive ul li a,.widget_categories ul li a {padding-left:0;padding-right:15px;}
+.widget_rss ul li,.widget_recent_entries ul li,.widget_meta ul li,
+.widget_links ul li,.widget_archive ul li,.widget_categories ul li,
+.widget_pages ul li,.widget_nav_menu ul li{background-image:url(../images/icons/ul_link_rtl.png);background-position:100% 6px;}
+.widget_pages ul li ul li, .widget_nav_menu ul li ul li {background-position:100% 6px;}
+.widget_nav_menu ul.sub-menu,.widget_pages ul.children{padding-left:0;padding-right:15px;}
+.recaptchatable #recaptcha_response_field{right:0;}

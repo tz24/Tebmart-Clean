@@ -1,0 +1,501 @@
+<?php ob_start();
+
+add_shortcode( 'searchbar', 'search_bar' );
+	
+function search_bar(){
+	?>
+<div id="Top_Search_Block">
+	<form id="adtpsearchform" name="adtpsearchform" method="post" action="<?php echo site_url(); ?>/advanced-search">
+	<div class="header_search">
+		<div class="dropdown">
+			<select name="adtpsearch-option">
+				<option value="buy" selected="selected">Buy</option>
+				<option value="sell">Sell</option>
+			</select>
+		</div>
+		<div class="search-div">
+			<input type="text" name="search" value="" placeholder="Enter your ISBN, book title, author, or keywords" />
+			<input type="submit" name="adtpsearch" value="submit"/>
+		</div>
+	</div>
+	</form>
+</div>
+<?php	
+}
+
+add_shortcode( 'buybooksearch', 'buybook_search' );
+	
+function buybook_search(){
+	?>
+<div class="buysearch-wrap">
+	<form id="buysearchform" name="buysearchform" method="post" action="<?php echo site_url(); ?>/advanced-search">
+		<table cellpadding="0" cellspacing="0" border="0" style="border:none; width:100%; !important; margin: 0 auto;" >
+            <tr class="form-field">
+                <td colspan="2"><input type="text" value="" name="book_title" placeholder="Book Title" class="book_title"></td>
+            </tr>
+			<tr class="form-field form-required">
+                <td><input type="text" value="" name="isn" placeholder="ISBN"/></td>
+				<td><input type="text" value="" name="edition" placeholder="Edition"></td>
+            </tr>
+			<tr class="form-field">
+                <td><input type="text" value="" name="author" placeholder="Author"></td>
+				<td><input type="text" value="" name="course_code" placeholder="Course Code"></td>
+            </tr>
+		</table>
+		<p style="margin:0 auto; width:20%;">
+           	<input id="buysearch" class="button button-primary cs-button normal yellow" type="submit" value="Advanced Search" name="buysearch">
+		</p>
+                
+	</form>
+</div>
+<?php	
+}
+
+
+
+add_shortcode( 'advancedsearch', 'advanced_search' );
+	
+	
+	function advanced_search()
+	{
+	
+		$url = site_url();
+		
+		$sellbook = $url.'/sell-books';
+	
+		//echo '<h2>Advanced Search</h2>';
+		
+		if($_POST['adtpsearch-option'] == 'sell'){
+			wp_redirect( $sellbook , 301 ); 
+			exit;
+			
+		}
+		
+		
+		if(!isset($_POST['adsearch']) and !isset($_POST['adtpsearch']) and !isset($_POST['buysearch'])){
+			echo '<h4 class="adtitle">Refine your search by completing one or more of the fields below:</h4>';
+		
+		
+		?>
+				
+		<div class="wrap">
+			<form id="adsearchform" name="adsearchform" method="post" action="">
+			<table cellpadding="0" cellspacing="0" border="0" style="border:none; width:900px; !important; margin: 0 auto;" >
+				<tr class="form-field form-required">
+					<th><label for="isn"><?php echo do_shortcode('[tooltip title="ISBN is a 10 digit or 12 digit numbers located at the back corner of the book.<br/>eg:99921-58-10-7 "]ISBN[/tooltip]'); ?></label></th>
+                    <td><input type="text" value="" name="isn"/><input type="hidden" name="email" value="<?php $current_user = wp_get_current_user(); echo $current_user->user_email; ?>"/></td>
+                </tr>
+                <tr class="form-field">
+					<th><label for="fname"><?php echo do_shortcode('[tooltip title="Book Title is  name of  book.<br> eg:YOU CAN WIN"]Book Title[/tooltip]'); ?></label></th>
+                    <td><input type="text" value="" name="book_title"></td>
+                </tr>
+                <tr class="form-field">
+					<th><label for="edition"><?php echo do_shortcode('[tooltip title="The book edition should be written on the front cover, usually underneath the title.<br>eg:First published: July 2012"]Edition[/tooltip]'); ?></label></th>
+                    <td><input type="text" value="" name="edition"></td>
+                </tr>
+				<tr class="form-field">
+					<th><label for="author"><?php echo do_shortcode('[tooltip title="Author mean the writer of a book<br>eg:Yannick Lefebvre is  the author of Plugin Development book."]Author[/tooltip]'); ?></label></th>
+                    <td><input type="text" value="" name="author"></td>
+                </tr>
+				<tr class="form-field">
+					<th><label for="course_code"><?php echo do_shortcode('[tooltip title="Course Code is unique number that identify what  type of course.<br>eg:IT-201 is course code for IT course."]Course Code[/tooltip]'); ?></label></th>
+                    <td><input type="text" value="" name="course_code"></td>
+                </tr>
+			</table>
+			<p class="submit">
+               	<input id="adsearch" class="button button-primary cs-button normal yellow" type="submit" value="Search" name="adsearch">
+			</p>
+                
+			</form>
+		</div>
+		
+		<script type="text/javascript">
+				function adsearch_validation()
+				{
+					var x1=document.forms["adsearchform"]["isn"];
+					var x2=document.forms["adsearchform"]["book_title"];
+					var x3=document.forms["adsearchform"]["edition"];
+					var x4=document.forms["adsearchform"]["author"];
+					var x5=document.forms["adsearchform"]["course_code"];
+					
+					if (x1.value==null || x1.value=="")
+					{
+					  alert("ISBN must be filled out");
+					  x1.focus(); // set the focus to this input
+					  return false;
+					}
+					
+					if (x2.value==null || x2.value=="")
+					{
+					  alert("Book Title must be filled out");
+					  x2.focus(); // set the focus to this input
+					  return false;
+					}
+					
+					if (x3.value==null || x3.value=="")
+					{
+					  alert("Edition must be filled out");
+					  x3.focus(); // set the focus to this input
+					  return false;
+					}
+					
+					if (x4.value==null || x4.value=="")
+					{
+					  alert("Author must be filled out");
+					  x4.focus(); // set the focus to this input
+					  return false;
+					}
+					
+					if (x5.value==null || x5.value=="")
+					{
+					  alert("Course Code must be filled out");
+					  x5.focus(); // set the focus to this input
+					  return false;
+					}
+					
+					//alert('Thank you for Submit Details!');
+					
+				}
+				
+                
+            </script>
+		
+	<?php
+		}
+		else{
+		global $wpdb,$woocommerce, $product,$post;
+		
+		$optsearch = $_POST['adtpsearch-option'];
+		$search = $_POST['search'];
+		$isbn = $_POST['isn'];
+		$btitle = $_POST['book_title'];
+		$edition = $_POST['edition'];
+		$author = $_POST['author'];
+		$ccode = $_POST['course_code'];
+		
+
+		echo '<div class="total-records"><p>';
+		echo 'Showing all results for your search: '.$isbn.' '.$btitle.' '.$edition.' '.$author.' '.$ccode.' '.$search.'<br/><br/>';
+		echo '</p></div>';
+	
+		
+		
+		if($isbn != NULL or $search != NULL){
+		
+			$where = " WHERE meta_key='_sku' and meta_value LIKE '%".$isbn.$search."%' ORDER BY post_id ASC";
+			$all_rec_q = "SELECT post_id FROM ".$wpdb->prefix."postmeta".$where ;
+			$hswp_tables = $wpdb->get_results($all_rec_q);
+
+			$i=0;
+			foreach ( $hswp_tables as $allpid ) 
+			{ 
+				$pid = $allpid->post_id;
+				$p_arry[$i] = $pid;
+				$i++;
+			}
+			$new = implode(",",$p_arry);
+			//print '$new: '.$new.'<br/>';
+		}	
+
+
+
+
+	
+		
+	if($btitle != NULL or $search != NULL){	
+		
+		/*
+		$results_attribute = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."woocommerce_attribute_taxonomies ORDER BY attribute_id ASC");
+		//$j=0;
+		if ($results_attribute) {
+			foreach($results_attribute as $product_attribute) {
+				$all_attribute[$product_attribute->attribute_id] = 'pa_'.$product_attribute->attribute_name;
+				//$all_attribute[$j] = $product_attribute->attribute_id = 'pa_'.$product_attribute->attribute_name;
+				//$j++;
+			}
+		}
+		
+		echo '<pre>';
+		print_r($all_attribute);
+		echo '</pre>';		
+		*/
+		
+		if($isbn != NULL){ $isbn_value = "ID IN(".$new.") and"; }
+		
+		$results_products = $wpdb->get_results("SELECT ID FROM ".$wpdb->prefix."posts WHERE  ".$isbn_value." post_title LIKE '%".$btitle.$search."%' AND post_type='product' AND post_status='publish' ORDER BY post_title ASC");
+		//$total = count($results_products);
+		$i=0;
+		if ($results_products) {
+			
+			foreach($results_products as $product_data) {
+				$pid = $product_data->ID;
+				$post_arry[$i] = $pid;
+				
+				//$result = array_shift(woocommerce_get_product_terms($product_data->ID, 'pa_format', 'names'));
+				//$result[$product_data->ID] = woocommerce_get_product_terms($product_data->ID, $all_attribute[5] , 'names');
+				$i++;
+			}
+			$new2 = implode(",",$post_arry);
+			//print '$new2: '.$new2.'<br/>';
+		}
+		
+		/*echo '<pre>';
+		print_r($all_search);
+		echo '</pre>';
+		*/
+	}	
+
+	/*
+	if($edition != NULL){
+	
+		$edition1 = "SELECT term_taxonomy_id,term_id FROM ".$wpdb->prefix."term_taxonomy WHERE taxonomy='pa_author-name' ORDER BY term_id ASC" ;
+		
+			$where7 = " WHERE term_id IN(".$edition1.") and name LIKE '%".$edition."%' ORDER BY term_id ASC";
+			print $all_rec_q = "SELECT term_id FROM ".$wpdb->prefix."terms".$where7 ;
+			$hswp_tables7 = $wpdb->get_results($all_rec_q);
+			$i=0;
+			foreach ( $hswp_tables7 as $allpid ) 
+			{ 
+				$tid = $allpid->term_id;
+				$t_arry7[$i] = $tid;
+				$i++;
+			}
+			$new7 = implode(",",$t_arry7);
+			print '$new7: '.$new7.'<br/>';		
+	
+			if($btitle != NULL){ $btitle_value = "post_id IN(".$new2.") and"; }
+		
+			$where = " WHERE ".$btitle_value." meta_key='attribute_pa_edition' and meta_value LIKE '%".$edition."%' ORDER BY post_id ASC";
+			print $all_rec_q = "SELECT post_id FROM ".$wpdb->prefix."postmeta".$where ;
+			$hswp_tables = $wpdb->get_results($all_rec_q);
+			
+			$i=0;
+			foreach ( $hswp_tables as $allpid ) 
+			{ 
+				$pid = $allpid->post_id;
+				$p_arry[$i] = $pid;
+				$i++;
+			}
+			$new3 = implode(",",$p_arry);
+			print '$new3: '.$new3.'<br/>';
+			
+	}*/
+
+
+	if($edition != NULL or $author != NULL or $ccode != NULL or $search != NULL){
+		
+			//$where = " WHERE taxonomy='pa_author-name' ORDER BY term_id ASC";
+			$where = " WHERE taxonomy IN(('pa_edition'),('pa_author-name'),('pa_course-code')) ORDER BY term_id ASC";
+			$all_rec_q = "SELECT term_taxonomy_id,term_id FROM ".$wpdb->prefix."term_taxonomy".$where ;
+			$hswp_tables = $wpdb->get_results($all_rec_q);
+			
+			$i=0;
+			foreach ( $hswp_tables as $allpid ) 
+			{ 
+				$tid = $allpid->term_id;
+				$t_arry[$i] = $tid;
+				$i++;
+			}
+			$new4 = implode(",",$t_arry);
+			//print '$new4: '.$new4.'<br/>';
+			
+			if($edition != NULL){ $edition_value = "AND name LIKE '%".$edition."%'"; }	
+			if($author != NULL){ $author_value = "OR slug LIKE '%".$author.$search."%'"; }
+			if($ccode != NULL){ $ccode_value = "OR slug LIKE '%".$ccode.$search."%'"; }
+			
+			$where5 = " WHERE term_id IN(".$new4.") ".$edition_value." ".$author_value." ".$ccode_value."  ORDER BY term_id ASC";
+			$all_rec_q = "SELECT term_id FROM ".$wpdb->prefix."terms".$where5 ;
+			$hswp_tables5 = $wpdb->get_results($all_rec_q);
+			$i=0;
+			foreach ( $hswp_tables5 as $allpid ) 
+			{ 
+				$tid = $allpid->term_id;
+				$t_arry5[$i] = $tid;
+				$i++;
+			}
+			$new5 = implode(",",$t_arry5);
+			//print '$new5: '.$new5.'<br/>';
+			
+			if($isbn != NULL){ $isbn_value2 = "and object_id IN(".$new2.")"; }
+			
+			$where6 = " WHERE term_taxonomy_id IN(".$new5.") ".$isbn_value2."  ORDER BY object_id ASC";
+			$all_rec_q = "SELECT DISTINCT object_id  FROM ".$wpdb->prefix."term_relationships".$where6 ;
+			$hswp_tables6 = $wpdb->get_results($all_rec_q);
+			
+			$i=0;
+			foreach ( $hswp_tables6 as $allpid ) 
+			{ 
+				$product_id = $allpid->object_id;
+				$t_arry6[$i] = $product_id;
+				$i++;
+			}
+			$new6 = implode(",",$t_arry6);
+			//print '$new6: '.$new6.'<br/>';
+			
+	}
+
+
+
+
+		
+
+		/*
+		$attribute_names = array( 'pa_author-name', 'pa_course-code','pa_edition','pa_format' ); // Insert attribute names here
+ 
+		foreach ( $attribute_names as $attribute_name ) {
+			$taxonomy = get_taxonomy( $attribute_name );
+						
+			if ( $taxonomy && ! is_wp_error( $taxonomy ) ) {
+				//$terms = wp_get_post_terms( $post->ID, $attribute_name );
+				$terms = wp_get_post_terms( $new6, $attribute_name );
+				$terms_array = array();
+							
+				 
+				if ( ! empty( $terms ) ) {
+					foreach ( $terms as $term ) {
+					$archive_link = get_term_link( $term->slug, $attribute_name );
+					$full_line = '<a href="' . $archive_link . '">'. $term->name . '</a>';
+					array_push( $terms_array, $full_line );
+					}
+				 
+					echo $taxonomy->labels->name . ' ' . implode( $terms_array, ', ' ).'<br/>';
+				}
+			}
+		}
+		*/
+		
+		//$product = get_product( $post->ID );
+		/*$product = get_product( 94 );
+		echo'<pre>';
+		print_r($product);
+		echo'</pre>';
+		*/
+		
+		
+		/*
+		$results_products = $wpdb->get_results("SELECT ID, post_title FROM ".$wpdb->prefix."posts WHERE post_type='product' AND post_status='publish' ORDER BY post_title ASC");
+		if ($results_products) {
+			foreach($results_products as $product_data) {
+				$all_products[$product_data->ID] = $product_data->post_title;
+			}
+		}
+		
+		$results_p_categories = $wpdb->get_results("SELECT t.term_id, t.name FROM ".$wpdb->prefix."terms AS t INNER JOIN ".$wpdb->prefix."term_taxonomy AS tt ON(t.term_id=tt.term_id) WHERE tt.taxonomy='product_cat' ORDER BY t.name ASC");
+		if ($results_p_categories) {
+			foreach($results_p_categories as $p_categories_data) {
+				$all_p_categories[$p_categories_data->term_id] = $p_categories_data->name;
+			}
+		}
+		
+		$results_p_tags = $wpdb->get_results("SELECT t.term_id, t.name FROM ".$wpdb->prefix."terms AS t INNER JOIN ".$wpdb->prefix."term_taxonomy AS tt ON(t.term_id=tt.term_id) WHERE tt.taxonomy='product_tag' ORDER BY t.name ASC");
+		if ($results_p_tags) {
+			foreach($results_p_tags as $p_tags_data) {
+				$all_p_tags[$p_tags_data->term_id] = $p_tags_data->name;
+			}
+		}
+		*/
+		
+		$fwhere = " WHERE ID IN(".$new.$new2.$new6.") and post_type='product' AND post_status='publish' ORDER BY ID ASC";
+		$fall_rec_q = "SELECT DISTINCT ID  FROM ".$wpdb->prefix."posts".$fwhere ;
+		$fhswp_tables = $wpdb->get_results($fall_rec_q);
+		
+		$total = count($fhswp_tables);
+		
+		if($total==0){
+			//echo '<h4>Cant find the book looking for? We can help you find it.</h4>';
+			print do_shortcode('[contact-form-7 id="256" title="Book Request Form"]');
+		}
+		
+		$c=0;
+
+		for($j=0; $j <$total; $j++)
+
+		{ $c++;
+
+		//$product = get_product( $post->ID );
+		$product = get_product( $fhswp_tables[$j]->ID );
+		$avatar = WC_Predictive_Search::woops_get_product_thumbnail($fhswp_tables[$j]->ID,'shop_catalog',64,64);
+		
+		/*echo '<pre>';
+		print_r($product);
+		echo '</pre>';*/
+		
+		?>
+
+<!------  my  custom--------->
+
+   <div  class="search_container">
+     	<div class="search_content" >
+	        <div class="book_pic" >
+	      	    <a href="<?php print $product->post->guid; ?>"><?php echo $avatar; ?></a>
+			</div>    
+			
+			<div class="book_information" >
+			    <div  class="book_title">
+				   <a href="<?php print $product->post->guid; ?>"><?php print $product->post->post_title; ?></a><br/>
+				   <p><?php print $product->post->post_excerpt; ?></p>
+				</div>
+		  
+				<div  class="book_metadata">
+				    <?php
+					$attribute_names = array( 'pa_author-name', 'pa_course-code','pa_edition','pa_format' ); // Insert attribute names here
+	 
+					foreach ( $attribute_names as $attribute_name ) {
+						$taxonomy = get_taxonomy( $attribute_name );
+									
+						if ( $taxonomy && ! is_wp_error( $taxonomy ) ) {
+							//$terms = wp_get_post_terms( $post->ID, $attribute_name );
+							$terms = wp_get_post_terms( $hswp_tables6[$j]->object_id, $attribute_name );
+							$terms_array = array();
+										
+							 
+							if ( ! empty( $terms ) ) {
+								foreach ( $terms as $term ) {
+								$archive_link = get_term_link( $term->slug, $attribute_name );
+								$full_line = '<a href="' . $archive_link . '">'. $term->name . '</a>';
+								array_push( $terms_array, $full_line );
+								}
+							  
+								echo  "<p>";
+								echo  "<span class='heading'>";
+								 echo 	$taxonomy->labels->name ;
+								echo "</span>" ;
+								echo "<span class='content'>";
+							  echo  $c=implode( $terms_array, ', ' );
+							 echo "</span>";
+								echo "</p>";
+							}
+						}
+					}
+					?>     
+		        </div>
+			</div>    
+		
+			<div class="book_addtocart" >
+			    <div class="book_price">
+					<?php if ( $price_html = $product->get_price_html() ) : ?>
+					<?php echo '<span>'.$price_html.'</span>'; ?>
+					<?php endif; ?>
+			    </div>
+				<div class="cart_btn">
+				    <a href="<?php print $product->post->guid; ?>">Buy Now </a>
+				</div>
+			</div>    
+		</div>    
+	</div>	<!---  end  search container--->
+	
+	
+	
+		
+		
+<?php		
+		}	
+	}
+}
+	
+	
+	
+	
+	
+	
+ob_clean(); ?>

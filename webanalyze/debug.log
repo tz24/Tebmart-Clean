@@ -1,0 +1,73 @@
+2015-07-28 00:21:24 Start Scan Process ver. 2.5 [scanner ver. 2.0]
+2015-07-28 00:21:24 Change Time limit: TRUE , Value: 7200
+2015-07-28 00:21:24 Current Memory limit: 256M
+2015-07-28 00:21:24 OS info: Linux (Linux box986.bluehost.com 3.12.35.1418868052 #1 SMP Wed Dec 17 20:04:02 CST 2014 x86_64)
+2015-07-28 00:21:24 PHP ver: 5.4.40
+2015-07-28 00:21:24 Domain: http://www.tebmart.com
+2015-07-28 00:21:24 Scan path: /home2/tebmartc/public_html/
+2015-07-28 00:21:24 Session report key: 850658793737ea2b05e31ce511df1aeb
+2015-07-28 00:21:24 Report URL: https://www.siteguarding.com/antivirus/viewreport?report_id=850658793737ea2b05e31ce511df1aeb
+2015-07-28 00:21:24 TMP folder: /home2/tebmartc/public_html/webanalyze/
+2015-07-28 00:21:27 -----------------------------------------------------------------------
+2015-07-28 00:21:27 Collecting info about the files [METHOD 2]
+2015-07-28 00:21:27 Excluded Folders: 0
+2015-07-28 00:21:27 Save collected file_list
+2015-07-28 00:21:27 Total files: 2114
+2015-07-28 00:21:27 -----------------------------------------------------------------------
+2015-07-28 00:21:27 Start - Pack with SSH
+2015-07-28 00:21:35 Pack file: /home2/tebmartc/public_html/webanalyze/pack.tar
+2015-07-28 00:21:35 Pack file is 6.31Mb
+2015-07-28 00:21:35 -----------------------------------------------------------------------
+2015-07-28 00:21:35 Start - Send Packed files to SG server
+2015-07-28 00:21:35 Pack URL: /webanalyze/pack.tar
+2015-07-28 00:21:35 CURL CURLOPT_INFILE: /home2/tebmartc/public_html/webanalyze/pack.tar
+2015-07-28 00:21:35 CURL CURLOPT_INFILESIZE: 6614761
+2015-07-28 00:21:35 CURL info - Array
+(
+    [url] => http://www.siteguarding.com/ext/antivirus/index.php?action=uploadfiles_ver2
+    [content_type] => text/html
+    [http_code] => 200
+    [header_size] => 236
+    [request_size] => 240
+    [filetime] => -1
+    [ssl_verify_result] => 0
+    [redirect_count] => 0
+    [total_time] => 0.350676
+    [namelookup_time] => 0.00104
+    [connect_time] => 0.003042
+    [pretransfer_time] => 0.00315
+    [size_upload] => 6615418
+    [size_download] => 0
+    [speed_download] => 0
+    [speed_upload] => 18864758
+    [download_content_length] => 0
+    [upload_content_length] => 6615418
+    [starttransfer_time] => 0.00522
+    [redirect_time] => 0
+    [certinfo] => Array
+        (
+        )
+
+    [primary_ip] => 185.72.156.129
+    [primary_port] => 80
+    [local_ip] => 69.195.124.186
+    [local_port] => 37153
+    [redirect_url] => 
+)
+
+2015-07-28 00:21:35 Pack file sent for analyze - OK
+2015-07-28 00:21:38 -----------------------------------------------------------------------
+2015-07-28 00:21:38 Start - Report generating
+2015-07-28 00:21:44 Another Scanning Process in the memory. Exit.
+2015-07-28 00:24:52 Done. Sending your report by email
+2015-07-28 00:24:55 Report Sent - OK
+2015-07-28 00:24:55 -----------------------------------------------------------------------
+2015-07-28 00:24:55 Array
+(
+    [type] => 2
+    [message] => date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone.
+    [file] => /home2/tebmartc/public_html/webanalyze/antivirus.php
+    [line] => 2352
+)
+
+2015-07-28 00:24:55 PHP process has been terminated

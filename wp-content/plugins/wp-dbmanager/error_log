@@ -1,0 +1,4 @@
+[29-Apr-2015 11:12:58 America/Denver] PHP Fatal error:  Call to undefined function current_user_can() in /home2/tebmartc/public_html/wp-content/plugins/wp-dbmanager/database-repair.php on line 21
+[02-May-2015 09:08:44 America/Denver] PHP Fatal error:  Call to undefined function current_user_can() in /home2/tebmartc/public_html/wp-content/plugins/wp-dbmanager/database-repair.php on line 21
+[05-May-2015 19:39:17] PHP Fatal error:  Call to undefined function  current_user_can() in /home2/tebmartc/public_html/wp-content/plugins/wp-dbmanager/database-repair.php on line 21
+[14-May-2015 21:55:08] PHP Fatal error:  Call to undefined function  current_user_can() in /home2/tebmartc/public_html/wp-content/plugins/wp-dbmanager/database-repair.php on line 21

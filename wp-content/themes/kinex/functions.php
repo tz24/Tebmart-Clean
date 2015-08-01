@@ -1,0 +1,1 @@
+<?php include_once('cstar_design_framework/functions.php'); ?>

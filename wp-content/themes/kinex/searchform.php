@@ -1,0 +1,3 @@
+<form action="<?php echo esc_url( home_url( '/' ) ); ?>" id="searchform" method="get">
+<div><?php $searchtext = __('Search...') ; ?><input type="text" id="s" name="s" value="<?php echo $searchtext; ?>" onfocus="this.value=(this.value=='<?php echo $searchtext; ?>') ? '' : this.value;" onblur="this.value=(this.value=='') ? '<?php echo $searchtext; ?>' : this.value;" /><input type="submit" value="<?php echo $searchtext; ?>" id="searchsubmit"></div>
+</form>

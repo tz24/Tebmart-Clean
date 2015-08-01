@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WooCommerce Delivery Time Picker Documentation</title>
+	<link href="http://fitwp.github.io/docs/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="sidebar">
+	<h3 id="title">WooCommerce Delivery Time</h3>
+	<div id="toc"></div>
+</div>
+
+<div id="content">
+
+# Introduction
+
+**Woocommerce Delivery Time Picker for Shipping** is a simple WooCommerce addon that allows customers to pick time for delivery when shipping (on the checkout page).
+
+The plugin uses jQuery Datepicker with Timepicker addon, so you'll have an intuitive and user-friendly interface.
+
+The delivery time chosen by the customer will be visible to the site administrator while **viewing the order**. It also will be **visible in emails** sent to the administrator.
+
+- **Plugin:** Woocommerce Delivery Time Picker for Shipping
+- **Version:** 2.1.1
+- **License:** GNU GPL v3.0
+- **Plugin URL:** [http://www.deluxeblogtips.com/woocommerce-delivery-time/](http://www.deluxeblogtips.com/woocommerce-delivery-time/)
+- **Author:** Rilwis
+- **Author Website:** [Deluxe Blog Tips](http://www.deluxeblogtips.com)
+- **Author Email:** <a href="mailto:rilwis@gmail.com">rilwis@gmail.com</a>
+- **Support:** [Support Forum](http://www.deluxeblogtips.com/forums/viewforum.php?id=5)
+
+# Configuration
+
+## Required
+
+This option make the delivery time mandatory field. Customer must enter delivery time to make order.
+
+## Label
+
+This is the text label appeared above the input on the checkout page. By default it's **Delivery Time**, but you can change it to anything.
+
+## Date format
+
+Format a date into a string value with a specified format. The format can be combinations of the following:
+
+- `d` - day of month (no leading zero)
+- `dd` - day of month (two digit)
+- `o` - day of the year (no leading zeros)
+- `oo` - day of the year (three digit)
+- `D` - day name short
+- `DD` - day name long
+- `m` - month of year (no leading zero)
+- `mm` - month of year (two digit)
+- `M` - month name short
+- `MM` - month name long
+- `y` - year (two digit)
+- `yy` - year (four digit)
+- `@` - Unix timestamp (ms since 01/01/1970)
+- `!` - Windows ticks (100ns since 01/01/0001)
+- `'...'` - literal text
+- `''` - single quote
+- anything else - literal text
+
+There are also a number of predefined standard date formats available:
+
+- `ATOM` = `yy-mm-dd` (Same as RFC 3339/ISO 8601)
+- `COOKIE` = `D, dd M yy`
+- `ISO_8601` = `yy-mm-dd`
+- `RFC_822` = `D, d M y` (See RFC 822)
+- `RFC_850` = `DD, dd-M-y` (See RFC 850)
+- `RFC_1036` = `D, d M y` (See RFC 1036)
+- `RFC_1123` = `D, d M yy` (See RFC 1123)
+- `RFC_2822` = `D, d M yy` (See RFC 2822)
+- `RSS` = `D, d M y` (Same as RFC 822)
+- `TICKS` = `!`
+- `TIMESTAMP` = `@`
+- `W3C` = `yy-mm-dd` (Same as ISO 8601)
+
+**Default**: `mm/dd/yy`
+
+## Time format
+
+Format a time into a string value with a specified format. The format can be combinations of the following:
+
+- `H` - Hour with no leading 0 (24 hour)
+- `HH` - Hour with leading 0 (24 hour)
+- `h` - Hour with no leading 0 (12 hour)
+- `hh` - Hour with leading 0 (12 hour)
+- `m` - Minute with no leading 0
+- `mm` - Minute with leading 0
+- `s` - Second with no leading 0
+- `ss` - Second with leading 0
+- `l` - Milliseconds always with leading 0
+- `c` - Microseconds always with leading 0
+- `t` - a or p for AM/PM
+- `T` - A or P for AM/PM
+- `tt` - am or pm for AM/PM
+- `TT` - AM or PM for AM/PM
+- `z` - Timezone as defined by timezoneList
+- `Z` - Timezone in Iso 8601 format (+04:45)
+- `'...'` - Literal text (Uses single quotes)
+
+**Default**: `hh:mm TT`
+
+## Language
+
+The plugin supports most languages in the world. You just need to select them from the dropdown box in the settings page.
+
+With the selected language, all text in the date time picker will be translated, such as text for prev, next, today, week days, etc.
+
+## Restrict dates
+
+This is the most powerful weapon the plugin supports. With this feature, you're able to provide shipping to customers in only some certain days/months.
+
+All you need to do is enter your rules into the textarea box.
+
+**You have to following this guide:**
+
+- You can enter **only one rule per line**
+- Each rule must be a single date or a single date range
+- Date must be formatted in USA format, e.g. `mm/dd/yyyy`
+- Date range must be formatted: `mm/dd/yyyy - mm/dd/yyyy` (e.g. `fromDate - toDate`)
+- You can use stars (*) for day, month or year, which means any day, any month or any year
+
+Examples:
+
+**Single date**
+
+Format | Meaning
+--- | ---
+`5/12/2013` | No shipping on May 12th, 2013
+`1/1/*` | No shipping on January 1st of any year (New Year)
+`8/*/2013` | No shipping in October, 2013
+`*/1/2014` | No shipping on first day of any month of 2014
+`12/*/*` | No shipping in December of any year
+`*/1/*` | No shipping on first day of any month of any year
+`*/*/2013` | No shipping in 2013 at all
+
+**Date range**
+
+Date range is just combination of from date and to date. Each date in the range must be well-formatted as single date.
+
+Format | Meaning
+--- | ---
+`5/12/2013 - 6/1/2013` | No shipping from May 12th, 2013 to June 1st, 2013
+`12/24/* - 1/1/*` | No shipping from December 24th to January 1st of **next year**
+`6/*/* - 8/*/*` | No shipping from June to October of any year
+`*/1/* - */5/*` | No shipping on first 5 days of any month of any year
+`8/*/* - 12/1/*` | No shipping from August to December 1st of any year
+`1/15/* - 2/*/*` | No shipping from January 15th to February
+`*/25/* - */1/*` | No shipping from 25th to 1st day of **next month**
+
+## Restrict by week days
+
+Beside restricting dates by rules above, you can restrict by week days. Just select which days you don't want to provide shipping from the checkbox list and save.
+
+## Restrict by hours
+
+You can limit the hours when customers can get their goods delivered. This is very convenience for shop with high quality of delivering.
+
+## Restrict sequence days from today
+
+You can disable datetime picker for some days, counting from today.
+
+For ex.:
+
+- `0`: disable today
+- `1`: disable today and tomorrow
+
+If you don't enter any value, the plugin will disables all past days, e.g. before today.
+
+## Disable time
+
+Sometimes you don't want users to select time for delivery, only dates. Since version 2.1.3, the plugin supports that.
+
+## Themes
+
+Now you can choose any theme from 21 themes available. It's helpful when you want the calendar matches your theme color.
+
+# Installation
+
+- Download zip file and unzip it
+- Upload plugin folder to the `/wp-content/plugins/` directory
+- Activate the plugin through the **Plugins** menu in WordPress
+- Configure the plugin settings (optional) by going to **WooCommerce -> Settings -> Shipping tab**
+- See it in action on **Checkout** page
+
+# Upgrade
+
+- Download zip file and unzip it
+- Upload plugin folder to the `/wp-content/plugins/` directory, overwrite old plugin files
+
+# Changelog
+
+**2.1.3**
+
+- Improvement: Add feature to disable time in the datetime picker
+- Improvement: Add feature to restrict sequence days from today
+
+**2.1.2**
+
+- Fix bug: header sent
+
+**2.1.1**
+
+- Add option to limit by hours
+- Fix bug: not show billing info when disable shipping
+
+**2.1**
+
+- Add option to make delivery time field required
+- Hide past days
+- Add themes
+
+**2.0**
+
+- Improvement: Add languages
+- Improvement: Add feature to restrict dates and date ranges
+- Improvement: Add feature to restrict week days
+- Improvement: Save settings in one option only
+- Improvement: Auto update
+
+**1.0**
+
+- Initial version
+
+# Support
+
+Please ask your questions on support forum: [http://www.deluxeblogtips.com/forums/viewforum.php?id=5](http://www.deluxeblogtips.com/forums/viewforum.php?id=5).
+
+</div><!-- #content -->
+
+<script src="http://fitwp.github.io/docs/script.js"></script>
+</body>
+</html>

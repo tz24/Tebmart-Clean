@@ -1,0 +1,6 @@
+<?php
+define("ENABLE_COMMON_FILTER", 1);
+$CONFIG_EXTRA_FILTER = array();
+define("WEBSITE_ID", "1256");
+define("WEBSITE_KEY", "350bb18c15f245f46911514817dbf863");
+?>

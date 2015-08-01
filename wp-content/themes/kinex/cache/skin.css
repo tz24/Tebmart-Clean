@@ -1,0 +1,677 @@
+
+
+body{
+   font           :14px/21px 'Arial', Arial;
+}
+
+#header .logo {
+	bottom:25px;
+	left:0px;
+}
+
+#header{
+	height:130px;
+   color:#bbbbbb;
+}
+#header ul.sf-menu > li.li-children > a:after {
+ 	content: ' ';
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 0.5em;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 5px solid #fefefe;
+	border-bottom: 2px solid transparent;
+}
+
+#header ul.sf-menu ul.sub-menu > li.li-children > a:after,
+#header ul.sf-menu ul.children > li.li-children > a:after {
+   content: ' ';
+   display: inline-block;
+   width: 0;
+   height: 0;
+   border-bottom: 4px solid transparent;
+   border-left: 4px solid red;
+   border-top: 3px solid transparent;
+   position: absolute;
+   right: 10px;
+   top: 13px;
+   border-color:transparent #fefefe transparent;
+}
+
+#header .menu {	right:-15px !important; }
+
+#header a{                 color:#fefefe; }
+#header ul.sf-menu > li.current_page_ancestor > a,
+#header ul.sf-menu > li.current_page_parent > a,
+#header ul.sf-menu > li.current_page_item > a,
+#header a:hover{           color:#fefefe; }
+
+#header ul.children li.current_page_ancestor > a,
+#header ul.children li.current_page_parent > a,
+#header ul.children li.current_page_item > a,
+#header ul.children li a:hover,
+#header ul.sub-menu li.current_page_ancestor > a,
+#header ul.sub-menu li.current_page_parent > a,
+#header ul.sub-menu li.current_page_item > a,
+#header ul.sub-menu li a:hover{
+   background-color:#aaaaaa;
+   color:#ffffff !important;
+}
+
+#header ul.sf-menu li ul li a {
+   background-color:#f1f1f1;
+   color:#555555;
+}
+
+#header ul.sf-menu li a {
+	font-size:17px;
+	font-family:'Arial', Arial;
+}
+
+#header ul.sf-menu li ul li a{
+   font: 11px/21px 'Tahoma',Arial;
+}
+
+/* home intro colors */
+#intro{
+   color:#FFFFFF;
+}
+#intro a{          
+   color:#FFFFFF;
+}
+#intro a:hover{    
+   color:#737988;
+}
+#intro h1, #intro h2, #intro h3, #intro h4, #intro h5, #intro h6{
+   color:#5c606b;
+}
+
+
+/* page-top colors */
+#page-top{
+   color:#737988;
+}
+#page-top a{          
+   color:#f4ae34;
+}
+#page-top a:hover{    
+   color:#5c606b;
+}
+
+
+/* slider colors */
+#slider{}
+#slider a{color:#88ac2e;}
+#slider a:hover{color:#999999;}
+#slider h1, #slider h2, #slider h3, #slider h4, #slider h5, #slider h6{}
+
+
+/* page content colors */
+#content{
+   color:#737988;
+}
+#content a{          
+   color:#f4ae34;
+}
+#content a:hover{    
+   color:#5c606b;
+}
+
+#content h1, #content h2, #content h3, #content h4, #content h5, #content h6{
+   color:#5c606b;
+}
+
+.commentlist li.depth-1, .commentlist li.depth-2,
+.commentlist li.depth-3, .commentlist li.depth-4,
+.commentlist li.depth-5,
+#content	ul.ul_links li a,
+#content .recent_list li,
+#content .divider_top,
+#content .divider_hr,
+#content .post-meta,
+#content hr{
+   border-color:#eeeeee;
+}
+
+
+
+/* footer colors */
+#footer{
+   color:#999999;
+   font-size:15px;
+   font-family:'Tahoma', Arial;
+}
+#footer a{          
+   color:#cccccc;
+}
+#footer a:hover{    
+   color:#ffffff;
+}
+#footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer h6{
+   color:#f4ae34;
+}
+
+/* copyright colors */
+#copyright{
+   color:#737988;
+   font-size:15px;
+   font-family:'Tahoma', Arial;
+}
+#copyright a{          
+   color:#f4ae34;
+}
+#copyright a:hover{    
+   color:#5c606b;
+}
+
+.dropcircle,
+.dropcap{
+   font-family:"Questrial", Arial, sans serif;
+}
+
+h1,h2,h3,
+h4,h5,h6 {	   font-family:"Questrial", Arial, sans serif; padding:0; margin:0 0 0.4em 0; line-height:1em; letter-spacing: 0.1px; font-weight:inherit; }
+h1{		   	font-size:36px;  }
+h1.page-title,
+h2{			   font-size:32px;  }
+h3{		   	font-size:28px;  }
+h2.post-title,
+h4{	   		font-size:24px;  }
+h3.widget-title,
+h5{	   		font-size:20px;  }
+h6{		   	font-size:16px;  line-height:2em; margin:0;	}
+
+h1 a,h2 a,h3 a, h4 a, h5 a, h6 a{ text-decoration:none !important; }
+
+/* 6 Background Manager */
+#header{    background-image:none; background-repeat:no-repeat; background-attachment:scroll; background-position:50% 0%; background-color:#f9f9f9;    }
+#slider{    background-image:url(http://www.tebmart.com/wp-content/themes/kinex/images/slider_bg.png); background-repeat:repeat-x; background-attachment:scroll; background-position:50% 0%; background-color:#ffffff; }
+#intro{     background-image:url(http://www.tebmart.com/wp-content/themes/kinex/images/intro_bg.png); background-repeat:repeat-x; background-attachment:scroll; background-position:0% 100%; background-color:#ececec;     }
+#content{	background-image:url(http://www.tebmart.com/wp-content/themes/kinex/images/content_bg.png); background-repeat:repeat-x; background-attachment:scroll; background-position:0% 0%; background-color:#ffffff;	}
+#footer{    background-image:none; background-repeat:no-repeat; background-attachment:scroll; background-position:0% 0%; background-color:#353535;    }
+#copyright{ background-image:none; background-repeat:no-repeat; background-attachment:scroll; background-position:50% 0%; background-color:#222222; }
+#page-top{  background-image:url(http://www.tebmart.com/wp-content/themes/kinex/images/page_top_bg.png); background-repeat:repeat-x; background-attachment:scroll; background-position:0% 0%; background-color:#dddddd;       }
+
+.post-wrapper{
+	margin-bottom:50px;
+}
+
+#boxed-layout{
+   margin: 0px auto;
+   max-width: 1200px;
+   height:auto;
+   display:block;
+   position:relative;
+   z-index:0;
+   box-shadow:0 0 5px rgba(0,0,0,0.3);
+}
+
+#Top_Search_Block {  
+float: left;  
+/*width:600px;*/
+width:100%;
+border:1px solid #b2c4d4;
+background-color:#E4EAEE;
+border-radius:5px;
+margin-top:15px;
+ }
+
+
+
+#header .widgets_on_page ul li{ list-style:none; }
+
+.sell_books_btn { 
+    float: left;  
+    margin: -3px 0 0 10px;
+    width: 157px; 
+}
+
+#Top_Search_Block h2 {
+    background-color: #2B86EF;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px 0 0 10px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 5px 10px 15px;
+    width:110px;
+}
+
+#searchform{ float:left; }
+
+.widgets_on_page ul li {
+    list-style: none outside none;
+}
+
+#searchform input#s:hover{
+    border:none !important;
+}
+
+#createuser label {
+    float: left;
+}
+
+
+#wppb_register .alert {
+    margin-bottom: -15px;
+}
+
+#location_field {
+    float: left;
+    width: 100%;
+}
+/*
+#location_field label {
+ color:#000;
+font-size:16px;
+font-weight:bold;
+}
+*/
+
+#frm-email {
+    width: 280px;
+}
+
+.footer_widget, .page_sidebar_widget{
+margin-bottom:1em;
+}
+.advance_search_table {
+    margin-top: 15px;
+    width: 100%;
+}
+
+
+
+
+.header-right {
+    float: right;
+    width: 65%;
+}
+
+.cuser {
+    float: left;
+   color:#000;
+    margin: 10px 0 0 0px;
+   text-transform: capitalize;
+}
+
+#page-top{
+background-color:#E4E4E4;
+}
+
+#Top_Search_Block br{ display: none;}
+
+#Top_Search_Block input[type="submit"]{
+	background:url("../images/magnifier.png") no-repeat;
+	background-position:center 6px; 
+	border: 1px solid #DA8C0C;
+        border-radius: 0 3px 3px 0;
+        background-color:#f4ae34;
+	box-shadow: none;
+	text-indent: -999px;
+        width:35px;
+        height:100%;
+        float:right;
+}
+
+#Top_Search_Block .dropdown select {
+	background: transparent;
+	width: 300px;
+	padding: 5px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	height: 34px;
+	-webkit-appearance: none;
+	box-shadow:none;
+	border:none;
+        cursor: pointer;
+}
+
+.dropdown select > option {
+    color: #F4AE34;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.dropdown {
+	width: 50px;
+	overflow: hidden;
+	float: left;
+        margin: 3px 0 0 0;
+        padding-left:10px;
+	background: url("http://www.tebmart.com/wp-content/uploads/2013/12/dropdown_img.png")  no-repeat;
+	background-position:right;
+        height: 30px;
+}
+
+.header_search {
+    float: left;
+    width:100%;
+}
+
+.header_search p {margin-bottom: 0;}
+
+.header_search input[type="text"] {
+    border: medium none;
+    box-shadow: none;
+    float: left;
+    height: 25px;
+    margin: 2px 0 0 4px;
+    padding: 0;
+    width: 90%;
+    /*width: 490px;*/
+}
+
+#customer_details .rd-gender{
+display:none;
+}
+
+.header-right-top{
+float:right;
+}
+
+.register .required {
+color: red;
+}
+
+.book-request tr {
+height: 45px;
+}
+
+.book_price .from {
+font-size: 11px;
+}
+
+#adduser strong {
+display: none;
+}
+
+#privacy_policy {
+	font-size: 12px;
+	display: block;
+	width: 100%;
+	padding: 3px;
+	margin-top: 2px;
+	margin-right: 6px;
+	margin-bottom: 8px;
+	background-color: #fff;
+	border: solid 1px #A7A6AA;
+	font-weight: normal;
+	height: 160px;
+	overflow: auto;
+}
+
+#rpr_school-p,#first_name-p{
+float: left;
+width: 47%;
+overflow: visible;
+}
+
+#wppb_register #rpr_school{
+width:200px;
+}
+
+#wppb_register #rpr_program-p{
+float:right;
+}
+
+#wppb_register #privacy_policy-p{
+width:100%;
+}
+
+#wppb_register .submit{
+margin-left:0px;
+}
+
+
+
+#rpr_program-p,#last_name-p{
+float: right;
+width: 47%;
+}
+
+#privacy_policy-p {
+float: left;
+padding:5px 0;
+}
+
+#privacy_policy h5 {
+padding-top: 10px;
+}
+
+
+#rpr_school,#rpr_program,#first_name,#last_name{
+/*width:195px !important;*/
+width:100% !important;
+margin-right: 12px;
+}
+
+.send-confirmation-email {
+display: none;
+}
+
+#wppb_register p{
+clear:none;
+}
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{ width: 13% !important;}
+
+.woocommerce div.product div.images, .woocommerce #content div.product div.images, .woocommerce-page div.product div.images, .woocommerce-page #content div.product div.images{
+width:31%;
+}
+
+.woocommerce div.product .product_title, .woocommerce #content div.product .product_title, .woocommerce-page div.product .product_title, .woocommerce-page #content div.product .product_title{ font-size:34px; }
+
+
+
+.header-right .widgets_on_page ul {
+padding: 0;
+}
+
+.page_sidebar_widget h3 {
+    background-color: #F4AE34;
+    color: #FFFFFF !important;
+    padding: 5px;
+}
+
+.total-records > p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.total-records span {
+color:#f4ae34;
+font-weight: bold;
+}
+
+#wppb_register .form-submit {
+    clear: both !important;
+    float: left;
+    margin-top: 10px;
+}
+
+.woocommerce-account #reg_email {
+width: 98%;
+}
+
+
+#Working_Hours > ul {
+    margin: 0;
+    padding: 0;
+}
+
+.shipping_address {
+display: block !important;
+}
+
+
+.register p {
+margin: 0;
+}
+
+.woocommerce ul.products li.product h3,.woocommerce-page ul.products li.product h3{
+height:18px;
+overflow: hidden;
+}
+
+.addresses .address ,.woocommerce-breadcrumb,.addresses{
+display: none;
+}
+
+.woocommerce table.my_account_orders, .woocommerce-page table.my_account_orders {
+font-size: 14px;
+}
+
+.woocommerce-cart .woocommerce {
+padding-top: 25px;
+}
+
+/*
+.woocommerce-page #page-top{
+display:none;
+}
+*/
+
+.entry-summary .product_title {
+text-align: right;
+}
+
+#customer_details #rpr_school, #customer_details #rpr_program { width:100% !important; }
+
+#Working_Hours p { margin: 0; }
+
+#Working_Hours {
+padding-left: 5px;
+font-size: 11px;
+}
+
+.shop_table > thead {
+    background-color: #F8C86D;
+}
+
+.woocommerce table.cart .product-thumbnail img{
+width: 95px !important;
+}
+
+
+#gform_fields_2 .gfield_label {
+color: #F4AE34;
+font-size: 14px;
+}
+
+
+.sellbooks span {
+padding: 10px !important;
+}
+
+.sell_books .widefat th.sortable, .sell_books .widefat th.sorted{ padding: 10px !important; }
+
+#main .box-red{ background: none !important; }
+.next, .prev{ padding:0 !important }
+
+#edituser .nameHeader,#edituser .contactInfoHeader,#edituser .aboutYourselfHeader{ display:none; }
+
+
+.book_title .short_description {
+    font-size: 14px;
+    padding: 5px 0;
+    text-align: left;
+    margin-bottom: 5px;
+    max-height: 30px;
+    overflow: hidden;
+}
+/*
+.price .from, .book_price .from {
+    display: none;
+}
+*/
+.product-total {
+    vertical-align: top !important;
+}
+
+.creatuser_div{
+background-color: #DCDCDC;
+}
+
+.bookcondition_title h4 {
+    color: #737988 !important;
+    text-align: center;
+}
+
+.gform_wrapper input[type="text"], .gform_wrapper input[type="url"], .gform_wrapper input[type="email"], .gform_wrapper input[type="tel"], .gform_wrapper input[type="number"], .gform_wrapper input[type="password"]{ font-size:14px !important;  }
+
+
+
+#createuser .form-field input{ width:auto !mportant; }
+
+.book_information .book_title{ line-height:30px; }
+
+.submit input[type=submit]{
+padding: 10px 220px !important;
+color: #737988;
+font-weight: 600;
+font-size: 18px;
+}
+
+.rememberme_chk{ margin-bottom:0px; }
+
+
+.ad-gravityform .gform_confirmation_message { 
+font-size: 26px; 
+text-align: center;
+font-weight: 700;
+color: #f4ae32;
+font-style: italic;
+  }
+
+.cart_btn{ margin-left:40px; }
+
+.goback_button {
+float: right;
+background-color: #f46600;
+color: #fff;
+font-weight: bold;
+border-radius: 5px;
+}
+
+.goback_div{ width:100%; float:right; padding-bottom:15px;  }
+
+.woocommerce div.product, .woocommerce #content div.product, .woocommerce-page div.product, .woocommerce-page #content div.product{ 
+float:left;
+width:100%;
+  }
+
+.woocommerce-account .woocommerce-message{
+width: 90% !important;
+}
+
+.woocommerce-message{
+float: left;
+width: 95%;
+}
+
+
+.flexslider span.title a{ 
+line-height: 15px;
+color: #5c606b !important; 
+}
+
+
+
+.flexslider span.title{ 
+font-size:1em !important;
+height:30px;
+overflow: hidden;   
+}
+
+.flexslider span.amount { color: #9a0000 !important; }
+
+h1.page-title{ font-size:30px !important; }
+
+#copyright{ margin-bottom:-21px;  }
+
+body { color: #222222; }
+
+.search-div{ width:88%; }

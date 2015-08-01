@@ -1,0 +1,4 @@
+[27-Apr-2015 06:37:30 America/Denver] PHP Fatal error:  Class 'IXR_Server' not found in /home2/tebmartc/public_html/wp-includes/class-wp-xmlrpc-server.php on line 22
+[27-Apr-2015 19:14:52 America/Denver] PHP Fatal error:  Class 'IXR_Server' not found in /home2/tebmartc/public_html/wp-includes/class-wp-xmlrpc-server.php on line 22
+[09-May-2015 10:23:59] PHP Fatal error:  Class 'IXR_Server' not found in /home2/tebmartc/public_html/wp-includes/class-wp-xmlrpc-server.php on line 22
+[09-May-2015 20:28:46] PHP Fatal error:  Class 'IXR_Server' not found in /home2/tebmartc/public_html/wp-includes/class-wp-xmlrpc-server.php on line 22
