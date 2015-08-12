@@ -1,3 +1,4 @@
+	<!--This file is not for book request form -->
 <?php  ob_start();
 
 function edit()
@@ -93,9 +94,16 @@ function edit_reservation_form()
                             </tr>
 							<tr class="form-field">
 								<th><label for="meeting_location">Choose a meeting location: <span class="required">*</span></label></th>
-                                <td><input type="radio" value="IC Atrium / Hall" name="meeting_location" <?php if($hswp_table->meeting_location=="IC Atrium / Hall"){ print "CHECKED"; }?>/>IC Atrium / Hall</br>
-									<input type="radio" value="Library" name="meeting_location" <?php if($hswp_table->meeting_location=="Library"){ print "CHECKED"; }?>/>Library</br>
-									<input type="radio" value="Student Centre" name="meeting_location" <?php if($hswp_table->meeting_location=="Student Centre"){ print "CHECKED"; }?>/>Student Centre</br>
+								<th><h3>Locations to pickup in UTSC :</h3></th>
+								<td><input type="radio" value="IC Atrium / Hall" name="meeting_location"/>IC Atrium / Hall</br>
+									<input type="radio" value="Library" name="meeting_location"/>Library</br>
+									<input type="radio" value="Student Centre" name="meeting_location"/>Student Centre</br>
+
+									
+			                        <th><h3>Locations to pickup in Waterloo :</h3></th>
+			                        <td><input type="radio" value="Dana Porter" name="meeting_location"/>Dana Porter</br>
+									<input type="radio" value="Davis Centre" name="meeting_location"/>Davis Centre</br>
+									<input type="radio" value="SLC" name="meeting_location"/>SLC</br>	
 								</td>
                             </tr>
 							<tr class="form-field">

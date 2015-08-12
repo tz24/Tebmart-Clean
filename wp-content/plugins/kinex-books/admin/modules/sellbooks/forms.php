@@ -1,3 +1,6 @@
+	<!--This file is Corrrect for book information-->
+
+
 <?php ob_start();
 
 
@@ -93,9 +96,9 @@ add_shortcode( 'sellerform', 'sellbook_form' );
                             </tr>
 							<tr class="form-field">
 								<th><label for="meeting_location">Choose a meeting location: <span class="required">*</span></label></th>
-                                <td><input type="radio" value="IC Atrium / Hall" name="meeting_location"/>IC Atrium / Hall</br>
-								<input type="radio" value="Library" name="meeting_location"/>Library</br>
-								<input type="radio" value="Student Centre" name="meeting_location"/>Student Centre</br>
+                                <td><input type="radio" value="Dana Porter" name="meeting_location"/>Dana Porter</br>
+								<input type="radio" value="Davis Centre" name="meeting_location"/>Davis Centre</br>
+								<input type="radio" value="SLC" name="meeting_location"/>SLC</br>
 								</td>
                             </tr>
 							<tr class="form-field">
@@ -157,7 +160,7 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 			<table cellpadding="0" cellspacing="0" border="0" style="border:none; width:900px; !important;" >
 
 				<tr>
-				  <td class="createuser_title">Book Information</td>
+				  <td class="createuser_title">Book Informations</td>
 				  <td><?php //echo do_shortcode('[tooltip title="Lorem Ipsum Message There"]Lorem Ipsum[/tooltip]'); ?></td>
 				</tr>
 				<tr class="form-field form-required">
@@ -200,18 +203,25 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 				</tr>
 
 				<tr class="form-field">
-					<td><input type="radio" value="IC Atrium / Hall" name="meeting_location"/>IC Atrium / Hall</br>
+<!-- 					<th><label for="meeting_location">Choose a meeting location: <span class="required">*</span></label></th>
+					<th><h3>Locations to pickup in UTSC :</h3></th> -->
+
+					<td>
+						<h7>Locations to pick up for UTSC :</h7> <br></br>
+						<input type="radio" value="IC Atrium / Hall" name="meeting_location"/>IC Atrium / Hall</br>
 						<input type="radio" value="Library" name="meeting_location"/>Library</br>
 						<input type="radio" value="Student Centre" name="meeting_location"/>Student Centre</br>
 					</td>
-					<td><div  class="creatuser_div">
-				    <?php echo do_shortcode("[widgets_on_pages id='Meeting  Location Addresses']"); ?>
-					</div></td>
-				</tr>
+					<td>
+						<h7>Locations to pick up for UWaterloo :</h7><br><br>
+						<input type="radio" value="Dana Porter" name="meeting_location"/> Dana Porter </br>
+						<input type="radio" value="Davis Centre" name="meeting_location"/>Davis Centre</br>
+						<input type="radio" value="SLC" name="meeting_location"/>SLC</br>
+					</td>
 
 
 				<tr class="form-field">
-					<th><img src="<?php echo $url ?>/kinex-books/admin/modules/sellbooks/tooltip.png"  class="tooltips" title="Metting Schedule is the suitable time to have come." /><label for="isn">Pickup Time <span class="required">*</span></label></th>
+					<th><img src="<?php echo $url ?>/kinex-books/admin/modules/sellbooks/tooltip.png"  class="tooltips" title="Metting Schedule is the suitable time to have come." /><label for="isn">Prefer Time <span class="required">*</span></label></th>
 				    <td><input type="text"   id="delivery_time" class="datepicker" name="delivery_time"/></td>
 				</tr>
 
@@ -232,7 +242,7 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 
 			</table>
 			<p class="submit">
-               	<input id="selloffer" class="button button-primary" type="submit" value="Request an Offer" name="sendrequest">
+               	<input id="selloffer" class="button button-primary" type="submit" value="Submit an Offer" name="sendrequest">
 			</p>
 
 
@@ -304,13 +314,21 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 					}
 
 					var mlocation = document.getElementsByName("meeting_location");
+
 					if (mlocation[0].checked == true) {
 						//alert("IC Atrium / Hall");
 					} else if (mlocation[1].checked == true) {
 						//alert("Library");
 					}	else if (mlocation[2].checked == true) {
 						//alert("Student Centre");
-					} else {
+					} else if (mlocation[3].checked == true) {
+						//alert("Student Centre");
+					} else if (mlocation[4].checked == true) {
+						//alert("Student Centre");
+					} else if (mlocation[5].checked == true) {
+						//alert("Student Centre");
+					}else {
+
 						// no checked
 						var msg = 'You must select Meeting Location!';
 						alert(msg);
@@ -331,7 +349,8 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 					  return false;
 					}
 
-					alert('Your order has been received, please check your email for an offer.');
+					alert('Your request has been received, a representative will contact you shortly.');
+
 
 					return true;
 
@@ -415,8 +434,27 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 	$message .= '<h1 style="color: #fff; margin: 0px; padding: 28px 24px; text-shadow: rgb(246, 190, 93) 0px 1px 0px; display: block; font-family: Arial; font-size: 30px; font-weight: bold; text-align: left; line-height: 150%;" >Selling Books Quote</h1>';
 	$message .= '</div>';
 	$message .= '<div style="padding:20px;">';
-	$message .= "<p>Dear Customer,<br/><br/>We have received your request and it is currently under review. In the meanwhile, please wait patiently and we will get back to you as soon as possible. If you have any concerns, please email us at info@tebmart.com or contact us at 6477169096. Your business is important to us!<br/><br/>Check out our new textbooks!</p>";
-	$message .= '<p style="color:#505050">Want to know how to buy or sell books? Please visit: <a href="http://tebmart.com/process/" title="Process">click here</a><br/>Get to know us, please visit:  <a href="http://tebmart.com/about-us/" title="About Us">click here</a><br/>Or follow us on <a href="https://facebook.com/pages/Tebmart/1443316865899682" title="Facebook">Facebook</a> and <a href="https://twitter.com/Teb_Mart" title="Twitter!">Twitter!</a><br/>Once again, thank you joining the Tebmart community!<br/><br /><strong style="text-align:center;">Tebmart</strong></p>';
+	$message .= "<p>Dear Customer,<br/>We have received your request and it is currently under review. In the meanwhile, please wait patiently and a representative will contact you as soon as possible. If you have any concerns, please email us at info@tebmart.com or contact us at 6476778877. Your business is important to us!<br/></p>";
+	$message .= "<p>Book Title : ";
+	$message .= $_POST['book_title'];
+	$message .= "</p>";
+	$message .= "<p>Course Code : ";
+	$message .= $_POST['course_code'];
+	$message .= "</p>";
+	$message .= "</p>";
+	$message .= "<p>Book Condition : ";
+	$message .= $_POST['book_condition'];
+	$message .= "</p>";
+	$message .= "</p>";
+	$message .= "<p>Meeting Location : ";
+	$message .= $_POST['meeting_location'];
+	$message .= "</p>";
+	$message .= "</p>";
+	$message .= "<p>Contact Information : ";
+	$message .= $_POST['contact_phone'];
+	$message .= "</p>";
+	$message .= "<p>Check out our new textbooks!</p>";
+	$message .= '<p style="color:#505050">Want to know how to buy or sell books?  Please visit: <a href="http://tebmart.com/process/" title="Process">click here</a><br/>Get to know us, please visit:  <a href="http://tebmart.com/about-us/" title="About Us">click here</a><br/>Or follow us on <a href="https://facebook.com/pages/Tebmart/1443316865899682" title="Facebook">Facebook</a> and <a href="https://twitter.com/Teb_Mart" title="Twitter!">Twitter!</a><br/>Once again, thank you joining the Tebmart community!<br/><br /><strong style="text-align:center;">Tebmart</strong></p>';
 	$message .= '</div>';
 	$message .= '</div>';
 	$message .= '</div>';

@@ -38,15 +38,15 @@ function get_send_offer_ajax() {
 	$main_email = get_option('admin_email');
 		echo '<h1 style="text-align:center;">Offer Send</h1>';
 		$emailto = $email.','.$admin_email;
-		$subject = 'A New offer has been submitted - ID "'.$$id.'"';
+		$subject = 'Sell Request Approved- Book: "'.$book_title.'"';
 		$email_message = "
 
 			Hi $user->first_name  $user->last_name<br/>
-			A new offer has been submitted by Tebmart Team. Here are the details:
+			The following request has been approved by Tebmart. Here are the details:
 			<h2>ID: $id </h2><br/>
 			<h2>Book Name: $book_title </h2><br/>
-			<h2>Offer Amount: $$amt </h2><br/>
-			To Accept this offer,  <a href='$rid&rep=yes' title='Accept'>Click Here</a> <br/>/*To Decline this offer,  <a href='$rid&rep=no' title='Decline'>Click Here</a>*/<br/><br/>
+			<h2>Sell Price: $$amt </h2><br/>
+			To confirm this request,  <a href='$rid&rep=yes' title='Confirm'>Click Here</a> <br/>/*To Decline this offer,  <a href='$rid&rep=no' title='Decline'>Click Here</a>*/<br/><br/>
 
 			Any query about offer amount send email at <a href='mailto:info@tebmart.com' >info@tebmart.com</a>
 

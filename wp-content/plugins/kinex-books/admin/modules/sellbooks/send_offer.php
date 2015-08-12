@@ -1,3 +1,4 @@
+<!--This file is sending emails  -->
 <?php ob_start();
 include('../../../../../../wp-load.php');
 function get_send_offer_ajax() {
@@ -17,7 +18,7 @@ function get_send_offer_ajax() {
 	$from_name = "Teb Mart";
 
 	$to = $_POST['email'];
-	$subject = "A New offer has been submitted - ID # $id ";
+	$subject = "Sell Request Approved- Book: $book_title";
 	$headers  = "From: no-reply@tebmart.com\r\n" . "X-Mailer: php\r\n";
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
@@ -38,11 +39,11 @@ function get_send_offer_ajax() {
 
 			<p>Hello User,<br/><br/>
 
-			A new offer has been submitted by Tebmart Team. Here are the details:<br/><br/>
+			The following request has been approved by Tebmart. Here are the details:<br/><br/>
 			ID: $id<br/><br/>
 			Book Name: $book_title<br/><br/>
-			Offer Amount: <strong>$$amt</strong><br/><br/>
-			To Accept this offer, <a href=\"$url/thanks-you?rep=yes&id=$id&uid=$uid\" target='_blank'>Click Here</a><br/>
+			Sell Price: <strong>$$amt</strong><br/><br/>
+			To Confirm this transaction, <a href=\"$url/thanks-you?rep=yes&id=$id&uid=$uid\" target='_blank'>Click Here</a><br/>
 			</p>
 
 			<p style='color:#505050'>Want to know how to buy or sell books? Please visit: <a href='http://www.tebmart.com/process/' title='Process'>click here</a><br/>
