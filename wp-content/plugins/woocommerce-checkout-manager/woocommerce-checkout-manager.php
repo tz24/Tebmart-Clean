@@ -1056,6 +1056,11 @@ if ( ! empty( $btn['label'] ) &&  ($btn['type'] == 'text') ) {
         ), $checkout->get_value( ''.$btn['cow'].'' )); 
 
 }
+//this is it
+
+$btn["DP"] = "Dana Porter";
+$btn["slc"] = "SLC";
+$btn["DC"] = "Davis Centre";
 
 
 if ( ! empty( $btn['label'] ) &&  ($btn['type'] == 'select') ) {
@@ -1068,7 +1073,10 @@ if ( ! empty( $btn['label'] ) &&  ($btn['type'] == 'select') ) {
              '' => __('Select below', 'woocommerce-checkout-manager' ),
              ''.$btn['option_a'].'' => __(''.$btn['option_a'].'', 'woocommerce-checkout-manager' ),
              ''.$btn['option_b'].'' => __(''.$btn['option_b'].'', 'woocommerce-checkout-manager' ),
-			 ''.$btn['option_c'].'' => __(''.$btn['option_c'].'', 'woocommerce-checkout-manager' )
+			 ''.$btn['option_c'].'' => __(''.$btn['option_c'].'', 'woocommerce-checkout-manager' ),
+       ''.$btn['slc'].'' => __(''.$btn['slc'].'', 'woocommerce-checkout-manager' ),
+       ''.$btn['DC'].'' => __(''.$btn['DC'].'', 'woocommerce-checkout-manager' ),
+       ''.$btn['DP'].'' => __(''.$btn['DP'].'', 'woocommerce-checkout-manager' ),
                                                  ),
         'required'  => $btn['checkbox'],
         'placeholder'       => ''.$btn['placeholder'].'',
