@@ -1,4 +1,5 @@
-<?php ob_start //not used straight copy
+<?php ob_start();
+
 
 add_shortcode( 'sellerform', 'sellbook_form' );
 
@@ -63,7 +64,7 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 					<table class="form-table">
 						<tbody>
 							<tr class="form-field form-required">
-								<th><label for="fname">ISBNasdfas</label></th>
+								<th><label for="fname">ISBN</label></th>
                                 <td><input type="text" value="" class="validate[required]" name="isn"/><input type="hidden" name="email" value="<?php $current_user = wp_get_current_user(); echo $current_user->user_email; ?>"/></td>
                             </tr>
 
@@ -126,6 +127,9 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 		else{
 			$url = plugins_url();
 		?>
+
+
+
 
 			<div class="wrap">
 			<form id="createuser" name="createuser" method="post" action="" onsubmit="return reserve_validation()">
@@ -373,51 +377,47 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 	$rows_affected = $wpdb->insert( $table_name, $wp_booking_data );
 	$id = mysql_insert_id();
 
-		$to = $_POST['email'];
-		$subject = "New Sell Book Request - ID # $id ";
-		$headers  = "From: no-reply@tebmart.com\r\n" . "X-Mailer: php\r\n";
-		$headers .= "MIME-Version: 1.0\r\n";
-		$headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-		$headers .= "Bcc: info@tebmart.com\r\n";
-		$email_message = "
-		<div style='margin:0 auto; width:600px; padding: 70px 0px;'>
+	// multiple recipients
+	$to  = $_POST['email'];
 
-			<div style='margin:0 auto; width:200px;'><img alt='Tebmart' src='http://www.tebmart.com/wp-content/uploads/2014/05/email-logo.png' /></div>
-	<br/><br/>
+	// subject
+	$subject = "New Sell Book Request - ID # $id ";
 
-		<div style='border:1px solid #ddd;'>
+	// message
+	$message = '<html><body>';
+	$message .= '<div style="margin:0 auto; width:600px; padding: 70px 0px;">';
+	$message .= '<div style="margin:0 auto; width:200px;">';
+	$message .= '<img alt="Tebmart" src="http://tebmart.com/wp-content/uploads/2014/05/email-logo.png" />';
+	$message .= '</div><br/><br/>';
+	$message .= '<div style="border:1px solid #ddd;">';
+	$message .= '<div style="background-color:#f4ae34;">';
+	$message .= '<h1 style="color: #fff; margin: 0px; padding: 28px 24px; text-shadow: rgb(246, 190, 93) 0px 1px 0px; display: block; font-family: Arial; font-size: 30px; font-weight: bold; text-align: left; line-height: 150%;" >Selling Books Quote</h1>';
+	$message .= '</div>';
+	$message .= '<div style="padding:20px;">';
+	$message .= "<p>Dear Customer,<br/><br/>We have received your request and it is currently under review. In the meanwhile, please wait patiently and we will get back to you as soon as possible. If you have any concerns, please email us at info@tebmart.com or contact us at 6477169096. Your business is important to us!<br/><br/>Check out our new textbooks!</p>";
+	$message .= '<p style="color:#505050">Want to know how to buy or sell books? Please visit: <a href="http://tebmart.com/process/" title="Process">click here</a><br/>Get to know us, please visit:  <a href="http://tebmart.com/about-us/" title="About Us">click here</a><br/>Or follow us on <a href="https://facebook.com/pages/Tebmart/1443316865899682" title="Facebook">Facebook</a> and <a href="https://twitter.com/Teb_Mart" title="Twitter!">Twitter!</a><br/>Once again, thank you joining the Tebmart community!<br/><br /><strong style="text-align:center;">Tebmart</strong></p>';
+	$message .= '</div>';
+	$message .= '</div>';
+	$message .= '</div>';
+	$message .= '</body></html>';
 
-		<div style='background-color:#f4ae34;'>
-			<h1 style='color: #fff; margin: 0px; padding: 28px 24px; text-shadow: rgb(246, 190, 93) 0px 1px 0px; display: block; font-family: Arial; font-size: 30px; font-weight: bold; text-align: left; line-height: 150%;' >Selling Books Quote</h1>
-		</div>
+	// To send HTML mail, the Content-type header must be set
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-		<div style='padding:20px;'>
+	// Additional headers
+	$headers .= 'From: Tebmart <info@tebmart.com>' . "\r\n";
+	$headers .= 'Cc: info@tebmart.com' . "\r\n";
+	$headers .= 'Bcc: info@tebmart.com' . "\r\n";
 
-			<p>Dear Customer,<br/><br/>
+	// Mail it
+	mail($to, $subject, $message, $headers);
 
-			We have received your request and it is currently under review. In the meanwhile, please wait patiently and we will get back to you as soon as possible. If you have any concerns, please email us at info@tebmart.com or contact us at 6477169096. Your business is important to us!<br/><br/>
+	//alert('Thank you for Submit Details!');
+	header('Location: http://www.tebmart.com/sell-books');
+	die();
 
-			Check out our new textbooks!</p>
-
-			<p style='color:#505050'>Want to know how to buy or sell books? Please visit: <a href='http://www.tebmart.com/process/' title='Process'>click here</a><br/>
-		Get to know us, please visit:  <a href='http://www.tebmart.com/about-us/' title='About Us'>click here</a><br/>
-		Or follow us on <a href='https://www.facebook.com/pages/Tebmart/1443316865899682' title='Facebook'>Facebook</a> and <a href='https://twitter.com/Teb_Mart' title='Twitter!'>Twitter!</a><br/>
-		Once again, thank you joining the Tebmart community!<br/>
-		<br /><strong style='text-align:center;'>Tebmart</strong></p>
-
-	</div>
-
-	</div>
-	</div>
-
-	";
-		mail($to,$subject,$email_message,$headers);
-
-			//alert('Thank you for Submit Details!');
-			header('Location: http://www.tebmart.com/sell-books');
-			die();
-
-		}
+	}
 
 
 ob_clean(); ?>

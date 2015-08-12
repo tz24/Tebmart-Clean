@@ -3274,6 +3274,10 @@ margin-left: 290px;
 	 float:left;
 	 width:195px;
 	 height:auto;
+
+    width: 17%;
+    border: 3px solid #8AC007;
+    padding: 10px;
 	 }
 
 
@@ -3292,9 +3296,11 @@ margin-left: 290px;
 	   height:auto;
 	   font-family: Arial;
        font-size: 24px;
+       max-width: 100%;
 	}
 
 	.book_information .book_title a{
+
 	 color:#000 !important;
 	}
 
@@ -3339,10 +3345,8 @@ float:right;
 }
 
 .book_metadata li {
-    float: left;
     line-height: 25px;
     list-style: none outside none;
-    width: 100%;
 }
 
 
@@ -3350,10 +3354,10 @@ float:right;
 
  .book_price {
 float: right;
-margin: 36px 0px 36px 38px;
 font-size: 30px;
 font-family: Arial;
 color: #000;
+    margin-top: 30px;
 }
 
 .book_metadata > p {
@@ -3361,8 +3365,7 @@ color: #000;
 }
 
 .cart_btn {
-/*float: left;*/
-float: right;
+    margin-top: 70px;
 margin: 17px 0 17px 17px;
 font-size: 23px;
 background-color: #f4ae34;

@@ -616,7 +616,9 @@ add_shortcode( 'advancedsearch', 'advanced_search' );
 			<div class="book_information" >
 			    <div  class="book_title">
 				    <a href="<?php print $product->post->guid; ?>"><?php print $product->post->post_title; ?></a><br/>
-					<?php if($product->post->post_excerpt){ ?><p class="short_description"><?php print $product->post->post_excerpt; ?></p><?php } ?>
+					<?php
+
+					if($product->post->post_excerpt){ ?><p class="short_description"><?php print $product->post->post_excerpt; ?></p><?php } ?>
 				</div>
 
 				<div  class="book_metadata">
@@ -678,11 +680,13 @@ add_shortcode( 'advancedsearch', 'advanced_search' );
 									}
 
 									echo  "<li>";
+
 									echo  "<span class='heading'>";
-									 echo 	$taxonomy->labels->name ;
+									 echo $taxonomy->labels->name ;
 									echo "</span>" ;
 									echo "<span class='content'>";
 								  echo  $c=implode( $terms_array, ', ' );
+
 								 echo "</span>";
 									echo "</li>";
 								}
@@ -704,7 +708,26 @@ add_shortcode( 'advancedsearch', 'advanced_search' );
 					<?php endif; ?>
 			    </div>
 				<div class="cart_btn">
-				    <a href="<?php print $product->post->guid; ?>">Buy Now </a>
+				    <a href="<?php print $product->post->guid; ?>">Buy Now</a>
+				</div>
+				<?php $string = $product->post->post_excerpt; ?>
+  				<?php preg_match('/us:(.*)/',$string, $matches); ?>
+
+
+				<div class="book_price">
+					<?php
+						if (!$matches[1]) {
+							echo '<span>N/A</span>';
+						} else {
+							echo '<span>'.$matches[1].'</span>';
+						}
+					?>
+			    </div>
+
+
+				<div class="cart_btn sell_btn">
+
+				    <a href="www.tebmart.com/quote">Sell Now</a>
 				</div>
 			</div>
 		</div>

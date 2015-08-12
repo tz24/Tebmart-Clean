@@ -16,8 +16,8 @@
 <?php echo get_theme_generator("ie_hack"); ?>
 <?php if( get_theme_option('general','google_analytics_position') == 'header' ){ echo stripslashes(get_theme_option('general','google_analytics_code')); } ?>
 <script  type="text/javascript">
-$(function () { 
-    $(".datepicker").datetimepicker(); 
+$(function () {
+    $(".datepicker").datetimepicker();
 });
 </script>
 </head>
@@ -39,19 +39,19 @@ $(function () {
 				$user_info = $current_user->user_login;
 			}
 
-		
+
 		echo '<div class="cuser">Welcome, '.$user_info.'</div>';
 		}
 		else {	echo '<div class="cuser">Welcome, Visitors</div>';
 		}
 		if ( is_user_logged_in() ) {
-			echo do_shortcode('[widgets_on_pages id="After login"]');			
+			echo do_shortcode('[widgets_on_pages id="After login"]');
 		} else {
 			echo do_shortcode('[widgets_on_pages id="Top Menu"]');
 		}
 	  ?>		</div>
 	  <?php echo do_shortcode('[searchbar]'); //echo do_shortcode('[widgets_on_pages id="Top Search Block"]');  ?>
-	</div>	
+	</div>
    </div>
    <div class="menu-div">
 		<div class="inner">
@@ -65,7 +65,7 @@ if(!is_user_logged_in() && is_page('sell-books'))
 if(is_user_logged_in() && is_page('my-account'))
 {
 	wp_safe_redirect('/tebmart/sell-books');
-	exit;	
+	exit;
 }if(!is_user_logged_in() && is_page('my-account')){	wp_safe_redirect('/tebmart/log-in');	exit;	}
 ?>
 			<?php get_theme_generator("site_menu"); ?>

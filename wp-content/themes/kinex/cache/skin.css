@@ -78,10 +78,10 @@ body{
 #intro{
    color:#FFFFFF;
 }
-#intro a{          
+#intro a{
    color:#FFFFFF;
 }
-#intro a:hover{    
+#intro a:hover{
    color:#737988;
 }
 #intro h1, #intro h2, #intro h3, #intro h4, #intro h5, #intro h6{
@@ -93,10 +93,10 @@ body{
 #page-top{
    color:#737988;
 }
-#page-top a{          
+#page-top a{
    color:#f4ae34;
 }
-#page-top a:hover{    
+#page-top a:hover{
    color:#5c606b;
 }
 
@@ -112,10 +112,10 @@ body{
 #content{
    color:#737988;
 }
-#content a{          
+#content a{
    color:#f4ae34;
 }
-#content a:hover{    
+#content a:hover{
    color:#5c606b;
 }
 
@@ -143,10 +143,10 @@ body{
    font-size:15px;
    font-family:'Tahoma', Arial;
 }
-#footer a{          
+#footer a{
    color:#cccccc;
 }
-#footer a:hover{    
+#footer a:hover{
    color:#ffffff;
 }
 #footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer h6{
@@ -159,10 +159,10 @@ body{
    font-size:15px;
    font-family:'Tahoma', Arial;
 }
-#copyright a{          
+#copyright a{
    color:#f4ae34;
 }
-#copyright a:hover{    
+#copyright a:hover{
    color:#5c606b;
 }
 
@@ -208,8 +208,8 @@ h1 a,h2 a,h3 a, h4 a, h5 a, h6 a{ text-decoration:none !important; }
    box-shadow:0 0 5px rgba(0,0,0,0.3);
 }
 
-#Top_Search_Block {  
-float: left;  
+#Top_Search_Block {
+float: left;
 /*width:600px;*/
 width:100%;
 border:1px solid #b2c4d4;
@@ -222,10 +222,10 @@ margin-top:15px;
 
 #header .widgets_on_page ul li{ list-style:none; }
 
-.sell_books_btn { 
-    float: left;  
+.sell_books_btn {
+    float: left;
     margin: -3px 0 0 10px;
-    width: 157px; 
+    width: 157px;
 }
 
 #Top_Search_Block h2 {
@@ -305,7 +305,7 @@ background-color:#E4E4E4;
 
 #Top_Search_Block input[type="submit"]{
 	background:url("../images/magnifier.png") no-repeat;
-	background-position:center 6px; 
+	background-position:center 6px;
 	border: 1px solid #DA8C0C;
         border-radius: 0 3px 3px 0;
         background-color:#f4ae34;
@@ -581,6 +581,7 @@ padding: 10px !important;
     margin-bottom: 5px;
     max-height: 30px;
     overflow: hidden;
+        width: 600px;
 }
 /*
 .price .from, .book_price .from {
@@ -618,15 +619,19 @@ font-size: 18px;
 .rememberme_chk{ margin-bottom:0px; }
 
 
-.ad-gravityform .gform_confirmation_message { 
-font-size: 26px; 
+.ad-gravityform .gform_confirmation_message {
+font-size: 26px;
 text-align: center;
 font-weight: 700;
 color: #f4ae32;
 font-style: italic;
   }
 
-.cart_btn{ margin-left:40px; }
+.cart_btn{ margin-left:40px; float: right; }
+
+.cart_btn.sell_btn {
+  background-color: #40B488;
+}
 
 .goback_button {
 float: right;
@@ -638,7 +643,7 @@ border-radius: 5px;
 
 .goback_div{ width:100%; float:right; padding-bottom:15px;  }
 
-.woocommerce div.product, .woocommerce #content div.product, .woocommerce-page div.product, .woocommerce-page #content div.product{ 
+.woocommerce div.product, .woocommerce #content div.product, .woocommerce-page div.product, .woocommerce-page #content div.product{
 float:left;
 width:100%;
   }
@@ -653,17 +658,17 @@ width: 95%;
 }
 
 
-.flexslider span.title a{ 
+.flexslider span.title a{
 line-height: 15px;
-color: #5c606b !important; 
+color: #5c606b !important;
 }
 
 
 
-.flexslider span.title{ 
+.flexslider span.title{
 font-size:1em !important;
 height:30px;
-overflow: hidden;   
+overflow: hidden;
 }
 
 .flexslider span.amount { color: #9a0000 !important; }

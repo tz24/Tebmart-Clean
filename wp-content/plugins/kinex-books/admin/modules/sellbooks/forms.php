@@ -2,53 +2,53 @@
 
 
 add_shortcode( 'sellerform', 'sellbook_form' );
-	
-	
+
+
 	function sellbook_form()
 	{
-	
+
 		global $woocommerce;
-		
-		
-?>		
-		
+
+
+?>
+
 	<!--Updated Alert message code start here-->
     <?php
-	
+
 		if(isset($_GET['action'])) { ?>
-    
-    
+
+
     <div class="updated">
     	<p><?php
-		
+
 		$action = $_GET['action'];
-		
-		switch($action){			
-			
+
+		switch($action){
+
 			case 'add':
-				
+
 				echo "Payment Created Successfully";
-			
+
 			break;
-			
-			
-			
+
+
+
 			case 'edit':
-				
+
 				echo "Payment Updated Successfully !";
-			
+
 			break;
-									
+
 			default:
-				$success_message = "Not call";	
-			
+				$success_message = "Not call";
+
 		}
 
-    
+
     	?></p>
-    
+
 	</div>
-    
+
     <?php } ?>
 <!--Updated Alert message code end here-->
 	<?php
@@ -56,10 +56,10 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 			if(is_admin()){
 	?>
 			<div class="wrap">
-			
-				
+
+
 				<h2>Sell Books</h2>
-			
+
 				<form id="createuser" class="validate" name="createuser" method="post" action="" onsubmit="return reserve_validation()">
 					<table class="form-table">
 						<tbody>
@@ -67,7 +67,7 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 								<th><label for="fname">ISBN</label></th>
                                 <td><input type="text" value="" class="validate[required]" name="isn"/><input type="hidden" name="email" value="<?php $current_user = wp_get_current_user(); echo $current_user->user_email; ?>"/></td>
                             </tr>
-                            
+
                             <tr class="form-field">
 								<th><label for="fname">Book Title <span class="required">*</span></label></th>
                                 <td><input type="text" value="" name="book_title"></td>
@@ -100,11 +100,11 @@ add_shortcode( 'sellerform', 'sellbook_form' );
                             </tr>
 							<tr class="form-field">
 								<th><label for="isn">Pickup Time <span class="required">*</span></label></th>
-								<td> <input type="text"   id="delivery_time" class="datepicker" name="delivery_time"/></td>	 
+								<td> <input type="text"   id="delivery_time" class="datepicker" name="delivery_time"/></td>
 							</tr>
 							<tr class="form-field">
 								<th><label for="isn">Contact Phone <span class="required">*</span></label></th>
-								<td><input type="text"   id="contact_phone" class="contact_phone" name="contact_phone"/></td>	 
+								<td><input type="text"   id="contact_phone" class="contact_phone" name="contact_phone"/></td>
 							</tr>
    							<tr>
 								<th><label for="more_info">More info</label></th>
@@ -112,32 +112,56 @@ add_shortcode( 'sellerform', 'sellbook_form' );
                             </tr>
 						</tbody>
 					</table>
-                    
-  
+
+
 					<p class="submit">
                     	<input id="selloffer" class="button button-primary" type="submit" value="Request an Offer" name="sendrequest">
 					</p>
-                
-                
+
+
 				</form>
 			</div>
-	
-		<?php } 
-		
+
+		<?php }
+
 		else{
-			$url = plugins_url(); 
+			$url = plugins_url();
 		?>
-	
+
+
+
+			<div class="buysearch-wrap">
+				<form id="buysearchform" name="buysearchform" method="post" action="<?php echo site_url(); ?>/advanced-search">
+					<table cellpadding="0" cellspacing="0" border="0" style="border:none; width:100%; !important; margin: 0 auto;" >
+			            <tr class="form-field">
+			                <td colspan="2"><input type="text" <?php if (isset($_POST['book_title'])) echo 'value="'.$_POST['book_title'].'"'; ?> name="book_title" placeholder="Book Title" class="book_title"></td>
+			            </tr>
+						<tr class="form-field form-required">
+			                <td><input type="text" <?php if (isset($_POST['isn'])) echo 'value="'.$_POST['isn'].'"'; ?> name="isn" placeholder="ISBN"/></td>
+							<td><input type="text" <?php if (isset($_POST['edition'])) echo 'value="'.$_POST['edition'].'"'; ?> name="edition" placeholder="Edition"></td>
+			            </tr>
+						<tr class="form-field">
+			                <td><input type="text" <?php if (isset($_POST['author'])) echo 'value="'.$_POST['author'].'"'; ?> name="author" placeholder="Author"></td>
+							<td><input type="text" <?php if (isset($_POST['course_code'])) echo 'value="'.$_POST['course_code'].'"'; ?> name="course_code" placeholder="Course Code"></td>
+			            </tr>
+						<input type="hidden" name="frm_search" value="ad_frm" />
+					</table>
+					<p style="margin:0 auto; width:20%;">
+			           	<input id="buysearch" class="button button-primary cs-button normal yellow" type="submit" value="Advanced Search" name="buysearch">
+					</p>
+
+				</form>
+			</div>
 			<div class="wrap">
 			<form id="createuser" name="createuser" method="post" action="" onsubmit="return reserve_validation()">
 			<table cellpadding="0" cellspacing="0" border="0" style="border:none; width:900px; !important;" >
-			
+
 				<tr>
 				  <td class="createuser_title">Book Information</td>
 				  <td><?php //echo do_shortcode('[tooltip title="Lorem Ipsum Message There"]Lorem Ipsum[/tooltip]'); ?></td>
 				</tr>
 				<tr class="form-field form-required">
-				
+
 					<th><img src="<?php echo $url ?>/kinex-books/admin/modules/sellbooks/tooltip.png"  class="tooltips" title="ISBN is a 10 digit or 13 digit numbers located at the back corner of the book.<br/>eg:99921-58-10-7 " /><label for="isn">ISBN</label></th>
                     <td ><input type="text" value="" id="isn" name="isn" class="validate[required]"/><input type="hidden" name="email" value="<?php $current_user = wp_get_current_user(); echo $current_user->user_email; ?>"/></td>
                 </tr>
@@ -157,7 +181,7 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 					<th><img src="<?php echo $url ?>/kinex-books/admin/modules/sellbooks/tooltip.png"  class="tooltips" title="Course Code is unique number that identify what  type of course.<br>eg:IT-201 is course code for IT course."/><label for="course_code">Course Code <span class="required">*</span></label></th>
                     <td><input type="text" value="" name="course_code"></td>
                 </tr>
-				
+
 				<tr class="form-field">
 					<th><img src="<?php echo $url ?>/kinex-books/admin/modules/sellbooks/tooltip.png"  class="tooltips" title="Book Condition describe the condition of the used books that you want sell" /><label for="book_condition">Book Condition <span class="required">*</span></label></th>
 				</tr>
@@ -174,7 +198,7 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 				<tr class="form-field">
 					<th><img src="<?php echo $url ?>/kinex-books/admin/modules/sellbooks/tooltip.png"  class="tooltips" title="Choose a location from below three locations where you can  come." /><label for="meeting_location">Meeting Location: <span class="required">*</span></label></th>
 				</tr>
-				
+
 				<tr class="form-field">
 					<td><input type="radio" value="IC Atrium / Hall" name="meeting_location"/>IC Atrium / Hall</br>
 						<input type="radio" value="Library" name="meeting_location"/>Library</br>
@@ -184,37 +208,37 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 				    <?php echo do_shortcode("[widgets_on_pages id='Meeting  Location Addresses']"); ?>
 					</div></td>
 				</tr>
-              
-				
+
+
 				<tr class="form-field">
 					<th><img src="<?php echo $url ?>/kinex-books/admin/modules/sellbooks/tooltip.png"  class="tooltips" title="Metting Schedule is the suitable time to have come." /><label for="isn">Pickup Time <span class="required">*</span></label></th>
-				    <td><input type="text"   id="delivery_time" class="datepicker" name="delivery_time"/></td>	 
+				    <td><input type="text"   id="delivery_time" class="datepicker" name="delivery_time"/></td>
 				</tr>
-				
+
 				<tr class="form-field">
 					<th></th>
-				    <td><?php echo do_shortcode('[widgets_on_pages id="Working Hours"]'); ?></td>	 
+				    <td><?php echo do_shortcode('[widgets_on_pages id="Working Hours"]'); ?></td>
 				</tr>
-								
+
 				<tr class="form-field">
 					<th><img src="<?php echo $url ?>/kinex-books/admin/modules/sellbooks/tooltip.png"  class="tooltips" title="Your Contact Phone Number" /><label for="isn">Contact Phone <span class="required">*</span></label></th>
-				    <td><input type="text"   id="contact_phone" class="contact_phone" name="contact_phone"/></td>	 
+				    <td><input type="text"   id="contact_phone" class="contact_phone" name="contact_phone"/></td>
 				</tr>
 
    				<tr>
 					<th><img src="<?php echo $url ?>/kinex-books/admin/modules/sellbooks/tooltip.png"  class="tooltips" title="More Information about your book." /><label for="more_info">More Information</label></th>
                     <td><textarea name="more_info" cols="50" rows="10"></textarea></td>
                 </tr>
-			
+
 			</table>
 			<p class="submit">
                	<input id="selloffer" class="button button-primary" type="submit" value="Request an Offer" name="sendrequest">
 			</p>
-                
-                
+
+
 			</form>
-			</div>	
-	
+			</div>
+
 		<script type="text/javascript">
 				function reserve_validation()
 				{
@@ -227,42 +251,42 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 					//var x7=document.forms["createuser"]["meeting_location"];
 					var x8=document.forms["createuser"]["delivery_time"];
 					//alert(x6);
-					
+
 					/*if (x1.value==null || x1.value=="")
 					{
 					  alert("ISN must be filled out");
 					  x1.focus(); // set the focus to this input
 					  return false;
 					}*/
-					
+
 					if (x2.value==null || x2.value=="")
 					{
 					  alert("Book Title must be filled out");
 					  x2.focus(); // set the focus to this input
 					  return false;
 					}
-					
+
 					if (x3.value==null || x3.value=="")
 					{
 					  alert("Edition must be filled out");
 					  x3.focus(); // set the focus to this input
 					  return false;
 					}
-					
+
 					if (x4.value==null || x4.value=="")
 					{
 					  alert("Author must be filled out");
 					  x4.focus(); // set the focus to this input
 					  return false;
 					}
-					
+
 					if (x5.value==null || x5.value=="")
 					{
 					  alert("Course Code must be filled out");
 					  x5.focus(); // set the focus to this input
 					  return false;
 					}
-					
+
 					var bookgrade = document.getElementsByName("book_condition");
 					if (bookgrade[0].checked == true) {
 						//alert("Grade 1");
@@ -278,7 +302,7 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 						alert(msg);
 						return false;
 					}
-					
+
 					var mlocation = document.getElementsByName("meeting_location");
 					if (mlocation[0].checked == true) {
 						//alert("IC Atrium / Hall");
@@ -292,38 +316,38 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 						alert(msg);
 						return false;
 					}
-					
+
 					if (x8.value==null || x8.value=="")
 					{
 					  alert("Meeting Date must be selected");
 					  x8.focus(); // set the focus to this input
 					  return false;
 					}
-					
+
 					if (x6.value==null || x6.value=="")
 					{
 					  alert("Contact Phone number must be filled out");
 					  x6.focus(); // set the focus to this input
 					  return false;
 					}
-					
+
 					alert('Your order has been received, please check your email for an offer.');
-					
+
 					return true;
-					
+
 				}
-				
-                
+
+
             </script>
-	
+
 	<?php } }
 		else{
 			echo do_shortcode('[woocommerce_my_account]');
 	?>
-		
 
-<?php		
-		
+
+<?php
+
 		/*
 			echo '<div style="width:470px; margin-top:20px; float:left;">';
 			echo "<h3>Please logged In for Sell Books.</h3>";
@@ -334,24 +358,24 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 			echo "<h3>Registration</h3>";
 			echo do_shortcode('[wppb-register]');
 			echo '</div>';
-		*/	
-		
-	
-		
+		*/
+
+
+
 		}
 	?>
-	
+
 <?php
 
-			
+
 	}
-	
+
 	if(isset($_POST['sendrequest'])){
-		
+
 	   global $wpdb, $current_user;
 	   $table_name = $wpdb->prefix . "sellbooks";
 
-	   
+
 	   $wp_booking_data = array(
 
 	   		'isn' => $_POST['isn'],
@@ -359,27 +383,27 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 			'edition' => $_POST['edition'],
 			'author' => $_POST['author'],
 			'course_code' => $_POST['course_code'],
-	   		'book_condition' => $_POST['book_condition'],	
+	   		'book_condition' => $_POST['book_condition'],
 	   		'meeting_location' => $_POST['meeting_location'],
 			'delivery_time' => $_POST['delivery_time'],
 			'contact_phone' => $_POST['contact_phone'],
-	   		'more_info'	=> $_POST['more_info'],	
-			'email'	=> $_POST['email'],	
+	   		'more_info'	=> $_POST['more_info'],
+			'email'	=> $_POST['email'],
 			'created_date' => date("Y-m-d H:i:s")
-	   
-	   
-	   
+
+
+
 	   );
-	   
+
 	$rows_affected = $wpdb->insert( $table_name, $wp_booking_data );
 	$id = mysql_insert_id();
-	
+
 	// multiple recipients
 	$to  = $_POST['email'];
 
 	// subject
 	$subject = "New Sell Book Request - ID # $id ";
-	
+
 	// message
 	$message = '<html><body>';
 	$message .= '<div style="margin:0 auto; width:600px; padding: 70px 0px;">';
@@ -397,7 +421,7 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 	$message .= '</div>';
 	$message .= '</div>';
 	$message .= '</body></html>';
-	
+
 	// To send HTML mail, the Content-type header must be set
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
@@ -409,11 +433,11 @@ add_shortcode( 'sellerform', 'sellbook_form' );
 
 	// Mail it
 	mail($to, $subject, $message, $headers);
-		
+
 	//alert('Thank you for Submit Details!');
 	header('Location: http://www.tebmart.com/sell-books');
 	die();
-			
+
 	}
 
 
